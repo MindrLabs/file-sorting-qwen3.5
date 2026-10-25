@@ -41,11 +41,12 @@ The export that writes these files reads the private benchmark results and answe
 
 - **Context 8K vs 65K** (dev folders, RTX 4090): the first plans of 2B, 4B and 9B Q4_K_M are byte-identical in 12 of 12 folders each, so the 8K memory numbers stand for the 65K results.
 - **RTX 4090 vs 16GB Mac** (dev-01…04, 8K, same model file and settings; the llama.cpp and model-compose builds differ, and for four asks the compose file revision too): one ask, 9B first plans identical in 2 of 4 folders and 2B in 0 of 4; on the Mac 9B was usable in 4 of 4 and 2B in 1 of 4. Four asks, 9B: identical in 3 of 4 folders, usable 4 of 4 on the Mac. Swap did not grow during the Mac runs (four asks: 0 before and after).
+- **RTX 4090 vs DGX Spark** (all 12 dev folders, 8K, 9B Q4_K_M, model-compose 0.4.120 from PyPI with llama-cpp-python built for CUDA, run with `measure run`): four asks, first plans identical in 7 of 12 folders and usable in 12 of 12; one ask, identical in 6 of 12 and usable in 11 of 12 (dev-07 had 21.4% of lines to fix, over the 20% line; on the 4090 it had 18.5%). `measure run` cannot see the tool calls, so `step7_stops` is blank and `usable` is blank where the plan passed every other test (`measure/README.md`). `peak_mb` is the server process's GPU memory from `nvidia-smi`, sampled every 2 seconds. Another user's vLLM service held about 56GB of the shared memory during the runs; GPU use was 0% just before and just after the runs.
 - **model-compose origin:** the real-downloads four-ask run used model-compose 0.4.120 from PyPI; every other line used a fork of 0.4.120 (`provenance.csv`). No PyPI-against-fork comparison of first plans is recorded in this folder.
 
 ## Index: which file backs which claim
 
-Codes: T1-T9 = the tables `scripts/report_tables.py` prints (Table 1-9 there; in the README, T1 = table 1, T2 and T3 = tables 2 and 11, T4 = tables 3 and 8, T5 = table 4, T6 = tables 5 and 9, T7 = table 6, T8 = table 7, T9 = table 10), S1-S8 = summary items, 3.1/3.3/3.6 = README sections, P = primary family, X = context sensitivity, M = machine sensitivity, FAQ = the TF-IDF, 2B and agent-list-rule answers.
+Codes: T1-T9 = the tables `scripts/report_tables.py` prints (Table 1-9 there; in the README, T1 = table 1, T2 and T3 = tables 2 and 11, T4 = tables 3 and 8, T5 = table 4, T6 = tables 5 and 9, T7 = table 6, T8 = table 7, T9 = table 10), S1-S8 = summary items, 3.1/3.3/3.6 = README sections, P = primary family, X = context sensitivity, M = machine sensitivity, D = the DGX Spark rerun, FAQ = the TF-IDF, 2B and agent-list-rule answers.
 
 | File | Model | Flow | Menu | Context | Machine | Rows | Backs |
 |---|---|---|---|---|---|---|---|
@@ -93,6 +94,8 @@ Codes: T1-T9 = the tables `scripts/report_tables.py` prints (Table 1-9 there; in
 | `mac-dev-2b-q4km-names-about-8k.csv` | 2B Q4_K_M | one ask | names + about | 8K | Mac M2 16GB | 4 | T1, T2, T3, M |
 | `mac-dev-9b-q4km-names-about-8k.csv` | 9B Q4_K_M | one ask | names + about | 8K | Mac M2 16GB | 4 | T1, T2, T3, S4, M |
 | `mac-dev-9b-q4km-names-about-vote-8k.csv` | 9B Q4_K_M | four asks | names + about | 8K | Mac M2 16GB | 4 | T1, T3, M (scored at export because the benchmark file was not yet scored) |
+| `dgx-dev-9b-q4km-names-about-8k.csv` | 9B Q4_K_M | one ask | names + about | 8K | DGX Spark (GB10) | 12 | T2, D (written by `measure run`) |
+| `dgx-dev-9b-q4km-names-about-vote-8k.csv` | 9B Q4_K_M | four asks | names + about | 8K | DGX Spark (GB10) | 12 | T2, D (written by `measure run`) |
 | `downloads-9b-q4km-careful-vote-8k.csv` | 9B Q4_K_M | four asks | names + about (careful) | 8K | Mac M2 16GB | 1 | T1, T5, T7, T8, S3, S4 |
 | `downloads-9b-q4km-careful-8k.csv` | 9B Q4_K_M | one ask | names + about (careful) | 8K | Mac M2 16GB | 1 | T1, T5, T7, T8, S2, S3, S4, S7 |
 | `downloads-9b-q4km-casual-8k.csv` | 9B Q4_K_M | one ask | names + about (casual) | 8K | Mac M2 16GB | 1 | T7, T8, S2 |

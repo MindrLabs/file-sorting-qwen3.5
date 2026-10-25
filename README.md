@@ -40,6 +40,7 @@ You need
 - macOS or Linux, Python 3.12 (check with `python3.12 --version`; if missing, `brew install python@3.12`)
 - At least 6.9GB of free memory. Close large apps you aren't using. If swap fills up, it gets several times slower (section 2).
 - On macOS, the Xcode Command Line Tools (`xcode-select --install`). llama-cpp-python is built during install.
+- On Linux with an NVIDIA GPU, the CUDA toolkit (`nvcc`), and install with `CMAKE_ARGS="-DGGML_CUDA=on" pip install -r requirements.txt`. A plain `pip install` builds llama-cpp-python for the CPU only, which is much slower.
 - The first start downloads the 5.7GB model file.
 
 **1. Install**
@@ -218,7 +219,7 @@ Accuracy on the unseen and dev folders was measured on an RTX 4090, and the real
 | How the synthetic folders were made | Projects, file names and where clue sentences sit were designed apart from the measuring side, and a fixed-seed generator wrote the files. Text files are filled with paragraphs unrelated to the projects, with a clue sentence in one of three places: within the first 300 characters, between 300 and 2,000 characters, or after 2KB. Non-text files are a real format header plus random bytes, so their contents can't be read |
 | Project descriptions | Written per folder while looking at the answer key and the file names and openings. Shaped as "what it is: 3–4 things that go in it", at most 90 characters, and not allowed to copy file names. Existing folders got no description. A best case: someone who knows their projects well writing them down once |
 | Real folders | A copy of the 70 most recent files from the author's Downloads folder (19 projects, answers set by the author) and a Desktop copy (30 files, all of which should stay). Both sets of Downloads descriptions (careful and casual) were also written while looking at the answer key |
-| Machines | Accuracy on the unseen and dev folders was measured on an RTX 4090 (24GB), the real folders on a 16GB Mac (Apple M2). Memory and time on both |
+| Machines | Accuracy on the unseen and dev folders was measured on an RTX 4090 (24GB), the real folders on a 16GB Mac (Apple M2). Memory and time on both. The 9B 4-bit dev folders were run again on a DGX Spark (GB10) |
 | Engine and settings | llama.cpp (llama-cpp-python), model-compose. Thinking mode not used. Context is 65K for the unseen folders and 8K for the recommended setting measured on the Mac. Measurements used a model-compose build (based on 0.4.120) that passes presence_penalty and min_p to llama.cpp. PyPI 0.4.120 does not pass these two values. On 4 dev folders measured on the Mac (2B and 9B at 4 bits, asking once), the 8 first plans were identical across the two builds (this comparison is in the working notes only, not in results/) |
 | Repeats | Once per folder. Rerunning with the same settings on the same machine gave byte-identical first plans. The Mac and the 4090 could give different first plans with the same model file and settings. Their builds differed too (section 5) |
 | What the model sees | For each file, its name and, for text files, the first 300 characters, plus the project list. Even when a person gives the list, the model sees the folder's file listing once in the project step, cut to 160 characters per file |
@@ -240,12 +241,12 @@ This tool asks the model many short questions, so it doesn't need a long context
 
 Table 2: Memory and time for 9B Q4_K_M (memory is the largest over folders, times are medians, 1GB = 1024MB)
 
-| | RTX 4090 | 16GB Mac |
-|---|---|---|
-| Memory, 65K context | 9.5GB | not measured |
-| Memory, 8K context | 6.0GB | 6.5GB (asking four times 6.9GB) |
-| One folder, asking once | 8 s (8–10 s) | 2 min (1 min 31 s to 2 min 49 s) |
-| One folder, asking four times | 20 s (18–24 s) | 7 min 38 s (5 min 02 s to 10 min 46 s) |
+| | RTX 4090 | 16GB Mac | DGX Spark |
+|---|---|---|---|
+| Memory, 65K context | 9.5GB | not measured | not measured |
+| Memory, 8K context | 6.0GB | 6.5GB (asking four times 6.9GB) | 5.8GB |
+| One folder, asking once | 8 s (8–10 s) | 2 min (1 min 31 s to 2 min 49 s) | 14 s (12–14 s) |
+| One folder, asking four times | 20 s (18–24 s) | 7 min 38 s (5 min 02 s to 10 min 46 s) | 39 s (32–44 s) |
 
 - Not measured: M1, M3 and M4 Macs, 8GB machines, Windows, phones. Memory should fit on other 16GB Apple Silicon Macs, but speed may differ.
 
@@ -256,7 +257,7 @@ Table 2: Memory and time for 9B Q4_K_M (memory is the largest over folders, time
 - Asking four times on the Mac was measured with other apps closed, and swap was 0 before and after. Measured while swap grew from 7.6GB to 13.3GB, the 3 folders that finished took a median of 10 min 19 s and one folder did not finish because a tool command hit its time limit.
 - When the real Downloads folder (70 files) was measured, about 8GB of swap was in use; 9B took 10 min 30 s asking once and 23 min 36 s asking four times.
 - The Mac and the 4090 could give different first plans with the same model file and settings (section 5). On the 4 dev folders measured on the Mac, 9B at 4 bits was usable on all 4 asking once and on all 4 asking four times.
-- On an NVIDIA DGX Spark (GB10), only time was measured, once each on the sample folder (19 top-level files) with the demo's list: asking once took 10 s and asking four times 20 s. The run was polled every 2 seconds, so each time is up to 2 s high. This is not the dev folders of Table 2, memory was not measured, and the plans were not scored. It used model-compose 0.4.120 from PyPI, which does not pass `presence_penalty` and `min_p` (`.env.sample`).
+- The DGX Spark (NVIDIA GB10) ran all 12 dev folders with model-compose 0.4.120 from PyPI and llama-cpp-python built for CUDA. Asking four times was usable on 12 of 12 folders and asking once on 11 of 12 (dev-07 had 21.4% of lines to fix, over the 20% line; on the 4090 it had 18.5%). The first plans matched the 4090's in 7 of 12 folders asking four times and in 6 of 12 asking once. The tool used for this rerun does not see the stop check, so "usable" here leaves out that one test. PyPI 0.4.120 does not pass `presence_penalty` and `min_p` (`.env.sample`). Memory is the server's GPU memory from `nvidia-smi`. Another user's service kept about 56GB of the shared memory loaded during the runs; GPU use was 0% just before and just after. On the sample folder (19 top-level files) it took 10 s asking once and 20 s asking four times.
 - 27B at 4 bits (16.7GB), run with the tool agent flow and a 65K context on the 24GB GPU, stopped with a CUDA error during its first run. Whether memory ran out was not checked, and as registered it was not rerun with a smaller context.
 - Memory and time for smaller models are in [section 6](#6-smaller-models).
 
@@ -404,8 +405,8 @@ The two flows were compared with the model also writing the list. For 9B, the st
 ### Other limits
 
 - **Variation across reruns and list orders is not covered.** Rerunning on the same machine gave the same first plan, so each folder was run once, without changing the sampling seed or the list order. As the effect of asking four times shows, the answer from asking once can change with the list order.
-- **Results can differ between the Mac and the 4090.** On 4 dev folders with the same model file and settings, 9B's first plans from asking once differed in 2 folders (asking four times: 1 folder). The two machines ran different llama.cpp and model-compose builds, and for asking four times a different revision of the config file too. So whether the difference comes from the machine or the build can't be told apart. So the rates measured on the 4090 can't be said to hold on a Mac. On the Mac too, asking once was usable on all 4 folders and asking four times on all 4.
-- **Sample sizes.** Unseen folders: 20 folders, once each (9B 4-bit 19, 9B 18, TF-IDF 16, 9B with the model's list 6). The dev comparison of asking four times: 12 folders, once each (9B 12 → 12). Mac times: 4 dev folders each.
+- **Results can differ between the Mac and the 4090.** On 4 dev folders with the same model file and settings, 9B's first plans from asking once differed in 2 folders (asking four times: 1 folder). The two machines ran different llama.cpp and model-compose builds, and for asking four times a different revision of the config file too. So whether the difference comes from the machine or the build can't be told apart. So the rates measured on the 4090 can't be said to hold on a Mac. On the Mac too, asking once was usable on all 4 folders and asking four times on all 4. On the DGX Spark, with yet another build, the first plans matched the 4090's in 7 of 12 dev folders asking four times and in 6 of 12 asking once.
+- **Sample sizes.** Unseen folders: 20 folders, once each (9B 4-bit 19, 9B 18, TF-IDF 16, 9B with the model's list 6). The dev comparison of asking four times: 12 folders, once each (9B 12 → 12). Mac times: 4 dev folders each. DGX Spark: 12 dev folders each.
 - **The person check is one person, the author, on 8 plans (166 lines).** Of the 59 lines the stand-in reviewer fixed, the person also fixed 49, and 10 of those 59 wrong lines looked right to the person. How many fewer folders would be usable by a person's standard was not counted.
 - **The draft list was measured once, on the real Downloads folder.** 9B's draft had about 4 of the 19 projects in usable form; 3 lines lumped different projects together, and 8 were missing. The draft is set to give 2–8 projects, so in a folder with many projects it catches only some.
 - **The baselines hold back with one threshold only.** The threshold set on the synthetic dev folders was used as is on the real folders. A baseline with a hold-back mechanism to match asking four times, and grouping with embeddings while the model only names the groups, were not measured.
