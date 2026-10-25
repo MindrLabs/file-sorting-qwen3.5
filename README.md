@@ -116,36 +116,24 @@ What gets organized
 
 From here on it is measurement results. If you only want to use the tool, [Three methods you can reuse](#three-methods-you-can-reuse), [4 Recommendations](#4-recommendations) and the [FAQ](#faq) are enough.
 
-- A "usable folder" is one where the model's first plan could be approved after fixing at most one line in five. The stand-in reviewer judged that (section 1). Moving 60% of the files that have an answer is enough, so a usable folder is not necessarily fully organized.
+- A "usable folder" is one where the model's first plan could be approved after fixing at most one line in five. A scoring program that holds the answer key (the stand-in reviewer) judged that ([section 1](#1-how-it-was-tested)).
 - "Unseen folders" (held out) are 20 synthetic folders whose contents the measuring side never saw, used only after the measuring tools were final.
-- A model without a quantization tag is 8-bit (Q8_0); 4-bit is the Q4_K_M file. Every 9B measured on the real folders (Downloads and Desktop) is 4-bit. [ ] is a Wilson 95% interval.
+- "Pair F1" (0–1) scores whether files of the same project ended up in the same folder. 1 means the same grouping as the answer key.
+- A model without a quantization tag is 8-bit (Q8_0); 4-bit is the Q4_K_M file. Every 9B measured on the real folders is 4-bit. [ ] is a Wilson 95% interval.
 
-1. **Given the project list with descriptions, 9B at 4 bits was usable on 95% of the unseen folders (19/20, [76, 99]).** The pass line is an interval lower bound of 50%. When the model also wrote the list, even 9B reached only 30%. [3.1](#31-giving-the-list-vs-leaving-it-to-the-model)
-2. **Descriptions changed the result a lot.** [Method 1](#1-you-name-the-projects-with-a-one-line-description)
-   - On the real Downloads folder (measured once), 9B scored a pair F1 of 0.32 with project names only and 0.46 with descriptions written after reading the file names (careful).
-   - Careful descriptions got 13 more files right than short descriptions written from the project names alone (casual): 42 vs 29 of 63. Casual descriptions did about as well as names only (0.31 vs 0.32).
-   - On the unseen folders, 2B was usable on 3 folders with names only and on 11 with descriptions added (section 6). 9B with names only was not measured.
-3. **Asking four times with the list order changed, and moving only on a majority, cut wrong moves.** [3.2](#32-asking-four-times-and-taking-the-majority)
-   - On the real Downloads folder, files sent to the wrong folder fell from 21 to 6. It left 7 files it was unsure of unmoved, so files a person must fix or move by hand fell from 25 to 16. This is one folder and one run, and the two runs used slightly different sampling settings (3.4).
-   - On the unseen folders, lines to fix fell from 8.3% to 4.3% and the usable share stayed the same.
-   - It takes 2.4–2.5 times as long (total on the 4090).
-4. **9B at 4 bits ran in at most 6.9GB on a 16GB Mac.** The recommended asking four times took a median of 7 min 38 s per folder with no swap in use; asking once takes about 2 minutes. With about 8GB of swap in use, asking four times on the real Downloads folder (70 files) took 23 min 36 s. [Section 2](#2-does-it-run-on-my-machine)
-5. **9B gave the same results at 4 bits as at 8 bits.** Cutting the context to 8K also left the first plans of asking once unchanged and saved a lot of memory. Smaller models and 2-bit are in [section 6](#6-smaller-models). [3.5](#35-quantization)
-6. **A folder with nothing to organize could not be left to it.** On a Desktop copy (30 files) where everything should stay, with the list also left to the model, even 9B at 4 bits tried to move 25. A list from a person was not measured there. On the unseen folders, 9B at 4 bits left 95% of unrelated files in place. [3.3](#33-picking-and-leaving-alone)
-7. **A baseline with no AI also passed on the synthetic folders (TF-IDF 16/20 = 80%, [58, 92]).** [FAQ](#wouldnt-word-matching-like-tf-idf-be-enough)
-   - No difference from 9B at 4 bits could be claimed (19 vs 16, Holm p 1.0).
-   - On the real Downloads folder, given the same list as the model, the baselines were not usable in any cell.
-   - With careful descriptions, 9B asking once (pair F1 0.46) scored higher than TF-IDF (0.23) and the 0.6B embedding (0.40). With names only or casual descriptions, the embedding (0.49, 0.36) scored higher than 9B (0.32, 0.31).
-8. **No file was lost during measurement.**
-   - In all 4,983 measurement runs, repeated over the test folders and real-folder copies with many settings, undoing right after organizing put every file back as it was. The runs repeat the same folders, so they are not independent trials.
-   - If a file with the same name already exists at the destination, that line is not moved.
-   - Permission problems, cloud-synced folders, and undoing after editing organized files were not tested.
+1. **Given the project list with descriptions, 9B at 4 bits was usable on 19/20 unseen folders ([76, 99]).** When the model also wrote the list, even 9B reached only 6/20. [3.1](#31-giving-the-list-vs-leaving-it-to-the-model)
+2. **A one-line description changed the result.** On the real Downloads folder, 9B scored a pair F1 of 0.32 with project names only and 0.46 with descriptions written after reading the file names (careful). [Method 1](#1-you-name-the-projects-with-a-one-line-description)
+3. **Asking four times with the list order changed, and moving only on a majority, cut wrong moves.** On the real Downloads folder, files sent to the wrong folder fell from 21 to 6 (one folder, one run). It takes 2.4–2.5 times as long. [3.2](#32-asking-four-times-and-taking-the-majority)
+4. **9B at 4 bits ran in at most 6.9GB on a 16GB Mac.** Per folder, asking once took about 2 minutes and asking four times a median of 7 min 38 s (with no swap in use). [Section 2](#2-does-it-run-on-my-machine)
+5. **9B gave the same results at 4 bits as at 8 bits.** [3.5](#35-quantization)
+6. **A folder with nothing to organize could not be left to it.** On a Desktop copy (30 files) where everything should stay, with the list also left to the model, even 9B at 4 bits tried to move 25. [3.3](#33-picking-and-leaving-alone)
+7. **A baseline with no AI also passed on the synthetic folders (TF-IDF 16/20).** No difference from 9B at 4 bits could be claimed. On the real Downloads folder it was not usable. [FAQ](#wouldnt-word-matching-like-tf-idf-be-enough)
+8. **No file was lost during measurement.** In all 4,983 measurement runs, undoing right after organizing put every file back as it was. [Method 3](#3-preview-and-undo)
 
 **Reading these numbers**
 
-- 19 is a best-case number. The project descriptions were written while looking at the answer key, which stands for someone who knows their own projects well writing them down. Whether a plan could be approved was judged by a scoring program that holds the answer key (the stand-in reviewer). A person reviewing may approve fewer ([1.1](#11-can-the-stand-in-reviewer-be-trusted)). The recommended setting (9B at 4 bits, asking four times) is a cell added after seeing other settings' results (section 5).
-- On the same synthetic folders, word matching with no AI (TF-IDF) was usable on 16.
-- On a real Downloads folder, it was usable only with descriptions written after reading the file names (careful) and with each question asked four times and the majority taken. That is one folder, measured once. On that folder, with project names only or with short descriptions (casual), a 0.6B embedding scored a higher pair F1 than 9B asked once (one folder, one run, so the difference was not tested; [3.4](#34-the-real-downloads-folder)).
+- 19 is a best-case number. The project descriptions were written while looking at the answer key, and approval was judged by a scoring program that holds the answer key. A person reviewing may approve fewer ([1.1](#11-can-the-stand-in-reviewer-be-trusted)). The recommended setting (9B at 4 bits, asking four times) is a cell added after seeing other settings' results (section 5).
+- There are two real folders, and each setting was measured once on them. On the real Downloads folder, it was usable only with careful descriptions plus asking four times ([3.4](#34-the-real-downloads-folder)).
 - It fits a folder of a few dozen files whose projects you already know. It does not fit when you don't yet know how to split the folder, or when there is little to organize ([FAQ](#what-is-the-point-if-a-person-writes-the-list)).
 
 Table 1: Recommended settings (names and descriptions given; the real Downloads column uses careful descriptions)
@@ -199,7 +187,7 @@ Figure 2: Asking four times left the 7 files it was unsure of unmoved. One folde
 ### 3. Preview and undo
 
 - The model cannot move files itself. Code gathers the model's picks into a plan, and code moves files according to the plan the person approved.
-- Files are never deleted or overwritten. If a file with the same name exists at the destination, that line is skipped. Every move is logged, and `undo` reverts organizes one at a time, starting from the latest. In all 4,983 measurement runs, every file was back as it was after undo.
+- Files are never deleted or overwritten. If a file with the same name exists at the destination, that line is skipped. Every move is logged, and `undo` reverts organizes one at a time, starting from the latest. In all 4,983 measurement runs, every file was back as it was after undo. The runs repeat the same folders, so they are not independent trials. Permission problems, cloud-synced folders, and undoing after editing organized files were not tested.
 - The approval screen alone doesn't catch every wrong line. When the author reviewed plans by hand, about one in six wrong lines looked right to a person too (small sample, [1.1](#11-can-the-stand-in-reviewer-be-trusted)).
 
 ## 1 How it was tested
@@ -218,6 +206,11 @@ Terms used in this report:
 - **Pair F1 (pairwise F1, 0–1):** a score from counting pairs: whether two files of the same project went to the same folder. 1 means the same grouping as the answer key. A project with only one file has no pairs, so it barely registers. Models are compared by taking differences on the same folders and resampling folders for a 95% interval. If the interval leaves out 0, it says "different"; if it includes 0 and lies entirely within ±0.05, "same"; otherwise "can't tell".
 - **Stand-in reviewer:** a program that holds the answer key (an oracle). In place of a person, it fixes the wrong lines of the first plan and approves it. It doesn't fix ambiguous files.
 
+Accuracy on the unseen and dev folders was measured on an RTX 4090, and the real folders on a 16GB Mac. The full conditions for folders, descriptions, engine, baselines and flows are folded below.
+
+<details>
+<summary>All test conditions</summary>
+
 | Item | Details |
 |---|---|
 | Unseen folders | 20 synthetic judgment folders. The measuring side did not see their contents. Used once per setting after the flow was frozen; the 9B 4-bit cell and the asking-four-times cell were added after seeing other cells' results (section 5). Each folder has 39–48 files and 4–6 projects |
@@ -231,6 +224,8 @@ Terms used in this report:
 | What the model sees | For each file, its name and, for text files, the first 300 characters, plus the project list. Even when a person gives the list, the model sees the folder's file listing once in the project step, cut to 160 characters per file |
 | Baselines | TF-IDF word matching with no AI, and a 0.6B embedding (Qwen3-Embedding-0.6B). They get the same list as the model and read each file's name and the first 2KB of text files (more than the model sees). Each file goes to the most similar project and stays if the similarity is below a threshold. The threshold is the value with the highest pair F1 on the dev folders, and the same value was used on the real folders |
 | Flows | **Step-by-step** (this tool): code sets the order and the model only picks for each file. **Tool agent**: the model drives itself, choosing tools (list the folder, preview, read, suggest groups, set the list, assign, submit). Compared in 3.6 and section 6 |
+
+</details>
 
 ### 1.1 Can the stand-in reviewer be trusted?
 
@@ -252,18 +247,33 @@ Table 2: Memory and time for 9B Q4_K_M (memory is the largest over folders, time
 | One folder, asking once | 8 s (8–10 s) | 2 min (1 min 31 s to 2 min 49 s) |
 | One folder, asking four times | 20 s (18–24 s) | 7 min 38 s (5 min 02 s to 10 min 46 s) |
 
+- Not measured: M1, M3 and M4 Macs, 8GB machines, Windows, phones. Memory should fit on other 16GB Apple Silicon Macs, but speed may differ.
+
+<details>
+<summary>Swap, DGX Spark, 27B and other details</summary>
+
 - For asking once on the Mac, swap was 3.9GB both before and after, so it did not grow during the measurement.
 - Asking four times on the Mac was measured with other apps closed, and swap was 0 before and after. Measured while swap grew from 7.6GB to 13.3GB, the 3 folders that finished took a median of 10 min 19 s and one folder did not finish because a tool command hit its time limit.
 - When the real Downloads folder (70 files) was measured, about 8GB of swap was in use; 9B took 10 min 30 s asking once and 23 min 36 s asking four times.
 - The Mac and the 4090 could give different first plans with the same model file and settings (section 5). On the 4 dev folders measured on the Mac, 9B at 4 bits was usable on all 4 asking once and on all 4 asking four times.
 - On an NVIDIA DGX Spark (GB10), only time was measured, once each on the sample folder (19 top-level files) with the demo's list: asking once took 10 s and asking four times 20 s. The run was polled every 2 seconds, so each time is up to 2 s high. This is not the dev folders of Table 2, memory was not measured, and the plans were not scored. It used model-compose 0.4.120 from PyPI, which does not pass `presence_penalty` and `min_p` (`.env.sample`).
-- Not measured: M1, M3 and M4 Macs, 8GB machines, Windows, phones. Memory should fit on other 16GB Apple Silicon Macs, but speed may differ.
 - 27B at 4 bits (16.7GB), run with the tool agent flow and a 65K context on the 24GB GPU, stopped with a CUDA error during its first run. Whether memory ran out was not checked, and as registered it was not rerun with a smaller context.
 - Memory and time for smaller models are in [section 6](#6-smaller-models).
+
+</details>
 
 ## 3 Results by feature
 
 ### 3.1 Giving the list vs leaving it to the model
+
+Given the list and descriptions, 9B passed at both 4 and 8 bits (19 and 18), and so did TF-IDF with no AI (16). When the model also wrote the list, even 9B reached 6.
+
+<img alt="Usable folders out of 20 unseen folders: 9B 4-bit 19, word matching with no AI 16, 2B 11, 0.8B 2, 4B 1, 9B with the model writing the list 6. Pass line 15" src="docs/images/en/usable.png" width="636">
+
+Figure 3: Picked from tables 3 and 8. The pass line is 15 of 20.
+
+<details>
+<summary>Table 3 and statistics</summary>
 
 Table 3: Usable folders out of 20 unseen folders (step-by-step, 65K context)
 
@@ -281,11 +291,14 @@ Table 3: Usable folders out of 20 unseen folders (step-by-step, 65K context)
 - Common mistakes in lists the tool agent wrote (dev folders) were catch-all folders such as "other" or "misc" and a second folder for an existing one under another name, which split one project across two folders.
 - The full table, including 0.8B, 2B, 4B and the 0.6B embedding, is in [section 6](#6-smaller-models).
 
-<img alt="Usable folders out of 20 unseen folders: 9B 4-bit 19, word matching with no AI 16, 2B 11, 0.8B 2, 4B 1, 9B with the model writing the list 6. Pass line 15" src="docs/images/en/usable.png" width="636">
-
-Figure 3: Picked from tables 3 and 8. The pass line is 15 of 20.
+</details>
 
 ### 3.2 Asking four times and taking the majority
+
+Asking four times made the real Downloads folder usable (lines to fix 32.8% → 9.4%). On the unseen folders, lines to fix fell from 8.3% to 4.3% and usable folders stayed at 19.
+
+<details>
+<summary>Table 4 and statistics</summary>
 
 Table 4: Asking once → asking four times (9B 4-bit, names and descriptions; unseen folders at 65K context, the rest at 8K)
 
@@ -300,7 +313,16 @@ Table 4: Asking once → asking four times (9B 4-bit, names and descriptions; un
 - On the unseen folders, the share of right pairs among the pairs 9B moved (pair precision) rose from 0.81 to 0.89, and the share of files with an answer that it moved fell from 0.78 to 0.74.
 - 2B and 4B results are in [section 6](#6-smaller-models).
 
+</details>
+
 ### 3.3 Picking and leaving alone
+
+On the unseen folders, 9B sent 95% or more of files to the right given folder and left 95% or more of unrelated files in place.
+
+A folder with nothing to organize is harder. On a real Desktop copy holding 30 files that should all stay, with the list also left to the model, even 9B at 4 bits tried to move 25. A list from a person was not measured there. Smaller models tried to move almost every file in this folder ([section 6](#6-smaller-models)).
+
+<details>
+<summary>Table 5</summary>
 
 Table 5: Average over the 20 unseen folders (names and descriptions given)
 
@@ -311,11 +333,20 @@ Table 5: Average over the 20 unseen folders (names and descriptions given)
 
 [ ] is a 95% interval from resampling folders. 9B picked the given folders well and left almost all unrelated files in place.
 
-A folder with nothing to organize is harder. On a real Desktop copy holding 30 files that should all stay, with the list also left to the model, even 9B at 4 bits tried to move 25. A list from a person was not measured there. Smaller models tried to move almost every file in this folder ([section 6](#6-smaller-models)).
+</details>
 
 ### 3.4 The real Downloads folder
 
 It has many projects (19), more than half of them with only 1–2 files, and many whose names don't say what they are. It is much harder than the synthetic folders with 4–6 projects. Projects with a single file barely register in pair F1.
+
+Only careful descriptions plus asking four times were usable (lines to fix 9.4%). Neither baseline (TF-IDF, embedding) was usable in any cell.
+
+<img alt="The 63 labelled files of the real Downloads folder. Right folder, wrong folder and not moved: names only 24, 32, 7; casual descriptions 29, 27, 7; careful descriptions 42, 21, 0" src="docs/images/en/descriptions.png" width="880">
+
+Figure 4: The folder of table 6, asking once. Careful descriptions were written after reading the file names; casual ones from the project names alone.
+
+<details>
+<summary>Tables 6 and 7, and how they count</summary>
 
 Table 6: First plans on the real Downloads folder (Mac, 9B 4-bit, 8K context, 63 files with an answer)
 
@@ -329,10 +360,6 @@ Table 6: First plans on the real Downloads folder (Mac, 9B 4-bit, 8K context, 63
 - Right folder, wrong folder and not moved count the 63 files with an answer. Lines to fix follow the stand-in reviewer, which counts differently: ambiguous files (6 in this folder) are not counted, and the folder most of a project's files went to counts as that project's folder. Lines that moved a whole project into a differently named folder count as right, so the rate is lower than one computed from the wrong-folder count.
 - Files a person must handle = wrong folder + files that should stay but were moved + files not moved.
 - Asking once was measured with the measurement build and asking four times with PyPI 0.4.120. The PyPI release does not pass presence_penalty and min_p to llama.cpp, so the two runs' sampling settings differ slightly (section 1).
-
-<img alt="The 63 labelled files of the real Downloads folder. Right folder, wrong folder and not moved: names only 24, 32, 7; casual descriptions 29, 27, 7; careful descriptions 42, 21, 0" src="docs/images/en/descriptions.png" width="880">
-
-Figure 4: The folder of table 6, asking once. Careful descriptions were written after reading the file names; casual ones from the project names alone.
 
 Table 7: Same folder, same list as the model: 9B at 4 bits vs the baselines (pair F1; lines to fix in parentheses)
 
@@ -349,6 +376,8 @@ Table 7: Same folder, same list as the model: 9B at 4 bits vs the baselines (pai
 - With careful descriptions, 9B rose from 0.32 to 0.46. Among the baselines, TF-IDF rose from 0.14 to 0.23 and the embedding fell from 0.49 to 0.40. With casual descriptions too, the embedding (0.36) scored higher than 9B asking once (0.31).
 - The baselines' only way to hold back when unsure, as asking four times does, is one threshold, and that threshold was set on the synthetic dev folders.
 - 2B results on the real Downloads folder are in [section 6](#6-smaller-models).
+
+</details>
 
 ### 3.5 Quantization
 
@@ -435,6 +464,13 @@ Table 8: Usable folders out of 20 unseen folders, all sizes (step-by-step, 65K c
 - 2B went from 3 with names only to 11 with descriptions added (McNemar p 0.008). TF-IDF rose with descriptions, but the 0.6B embedding fell. The reason was not examined.
 - By pair F1, TF-IDF scored higher than 2B (−0.13) and 4B (−0.21), both different.
 
+<img alt="Share of unrelated files left in place on the unseen folders: 9B 96%, 2B 89%, 0.8B 71%, 4B 50%" src="docs/images/en/leave-alone.png" width="469">
+
+Figure 5: The 8-bit rows of table 9.
+
+<details>
+<summary>Table 9: Picking and leaving alone, all sizes</summary>
+
 Table 9: Picking and leaving alone, all sizes (average over the 20 unseen folders, names and descriptions given)
 
 | Model | Sent to the right given folder | Unrelated files left in place |
@@ -448,11 +484,10 @@ Table 9: Picking and leaving alone, all sizes (average over the 20 unseen folder
 
 4B was a little below 2B at picking too, but both cleared the preset bar (interval lower bound 80%); the big split was in leaving alone. 0.8B fell short of the bar even at picking. On the Desktop copy (30 files that should all stay), the first plans tried to move 29 (2B), 30 (4B 4-bit) and 25 (9B 4-bit) files (2B and 4B at 65K context, 9B at 8K).
 
-<img alt="Share of unrelated files left in place on the unseen folders: 9B 96%, 2B 89%, 0.8B 71%, 4B 50%" src="docs/images/en/leave-alone.png" width="469">
+</details>
 
-Figure 5: The 8-bit rows of table 9.
-
-**Steps: each passed or failed on its own**
+<details>
+<summary>Steps: each passed or failed on its own</summary>
 
 - Each step is passed or failed on its own. A folder that fails one step is still counted on the next, so the steps are not climbed one after another.
 - The steps: 1 called a tool at least once. 2 gave a plan with no unreadable line. 3 of the files you can tell by name, every one it moved went to the right folder, and it moved at least 60%. 4 the same for files you have to open. 5 moved no file that has no answer or already sits in an organized folder. 7 made at most two tool calls after the last move. Step 6 (taking a rejection) is measured only when a plan is rejected, so it is left out.
@@ -461,8 +496,7 @@ Figure 5: The 8-bit rows of table 9.
 - The settings differed at steps 3 and 5. In the step-by-step flow, steps 1, 2 and 7 were 20 on every row. Only the tool agent, where the model decides when to finish, failed step 7, on 11. 4B passed step 3 on 10 but step 5 on none (figure 5).
 - TF-IDF is not a model that writes a plan, so it has no steps 1–4 or 7 (step 5: 14, usable folders: 16).
 
-<details>
-<summary>Every step, all settings (unseen folders passed, of 20)</summary>
+Every step, all settings (unseen folders passed, of 20)
 
 | Setting | 1 Tool call | 2 Plan format | 3 Group by name | 4 Group by opening | 5 Leave the rest alone | 7 Stop | Usable folders |
 |---|---|---|---|---|---|---|---|
@@ -478,6 +512,9 @@ Figure 5: The 8-bit rows of table 9.
 
 </details>
 
+<details>
+<summary>Table 10: Change in pair F1 by quantization</summary>
+
 Table 10: Change in pair F1 from 8-bit (unseen folders, paired by folder)
 
 | | Step-by-step + names and descriptions | Tool agent |
@@ -488,6 +525,11 @@ Table 10: Change in pair F1 from 8-bit (unseen folders, paired by folder)
 | 4B → 2-bit | −0.054 [−0.095, −0.011] different | −0.239 [−0.320, −0.153] different |
 
 2-bit dropped even in the step-by-step flow, which calls no tools, so it is not only a problem with the tool-call format. 2-bit was measured with 4B only.
+
+</details>
+
+<details>
+<summary>Asking four times, flow, real Downloads folder (2B, 4B)</summary>
 
 **Asking four times (12 dev folders, 4-bit, 8K context)**
 - 4B's usable folders rose from 2/12 to 7/12 (lines to fix 31.5% → 18.4%, McNemar p 0.0625).
@@ -503,6 +545,8 @@ Table 10: Change in pair F1 from 8-bit (unseen folders, paired by folder)
 - With careful descriptions, right folder 31, wrong folder 27, not moved 5 (pair F1 0.47, lines to fix 30.5%); with casual descriptions, 22, 34 and 7 (0.31, 39.3%). Neither was usable; files a person must handle were 37 and 46.
 - 2B 8-bit with names only (65K context) scored a pair F1 of 0.22.
 - On 4 dev folders with the same model file and settings, the Mac's and the 4090's first plans all differed, and 1 folder was usable on the Mac.
+
+</details>
 
 Table 11: Memory and time for 2B and 4B at 4 bits (memory is the largest over folders, 1GB = 1024MB; times are medians at 8K context)
 
