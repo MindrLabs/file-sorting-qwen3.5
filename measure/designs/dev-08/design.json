@@ -1,0 +1,344 @@
+{
+  "number": 14,
+  "language": "en",
+  "attempts": 2,
+  "models": [
+    "claude-opus-5-5"
+  ],
+  "redraw_kinds": {
+    "leak": 2
+  },
+  "design": {
+    "projects": [
+      {
+        "name": "412-maple-ave",
+        "clue": "Seller at 412 Maple Ave agreed to repaint the porch trim before the photographer comes on the 28th."
+      },
+      {
+        "name": "birchwood-ranch",
+        "clue": "Birchwood Ranch septic inspection came back clean; the buyer's agent is now asking for the well water report."
+      },
+      {
+        "name": "harbor-point-condo",
+        "clue": "Harbor Point Unit 3B: HOA resale certificate must be ordered at least ten days before we go live on MLS."
+      },
+      {
+        "name": "showing-day-mailers",
+        "clue": "Mailer proof v3: move the QR code under the headline and swap in the twilight exterior shot for Sunday's showing."
+      },
+      {
+        "name": "ce-renewal-hours",
+        "clue": "Still need 6 hours of Fair Housing plus the 3-hour agency law module before my Dec 31 license renewal deadline."
+      }
+    ],
+    "existing": [
+      {
+        "project": "412-maple-ave",
+        "file": "412_Maple_seller_disclosure_signed.pdf",
+        "kb": 340
+      },
+      {
+        "project": "ce-renewal-hours",
+        "file": "CE_certificate_ethics_module1.pdf",
+        "kb": 180
+      }
+    ],
+    "files": [
+      {
+        "name": "412_Maple_CMA_Oct2026.xlsx",
+        "project": "412-maple-ave",
+        "clue": "name",
+        "kb": 64,
+        "topic": ""
+      },
+      {
+        "name": "maple_ave_porch_before.HEIC",
+        "project": "412-maple-ave",
+        "clue": "name",
+        "kb": 780,
+        "topic": ""
+      },
+      {
+        "name": "412-maple-room-measurements.txt",
+        "project": "412-maple-ave",
+        "clue": "name",
+        "kb": 3,
+        "topic": "412-maple-ave"
+      },
+      {
+        "name": "notes_oct14.txt",
+        "project": "412-maple-ave",
+        "clue": "early",
+        "kb": 2,
+        "topic": "412-maple-ave"
+      },
+      {
+        "name": "vendor_followups.md",
+        "project": "412-maple-ave",
+        "clue": "mid",
+        "kb": 6,
+        "topic": "412-maple-ave"
+      },
+      {
+        "name": "Birchwood_Ranch_septic_report.pdf",
+        "project": "birchwood-ranch",
+        "clue": "name",
+        "kb": 520,
+        "topic": ""
+      },
+      {
+        "name": "birchwood_comps_final (2).xlsx",
+        "project": "birchwood-ranch",
+        "clue": "name",
+        "kb": 58,
+        "topic": ""
+      },
+      {
+        "name": "call_log.txt",
+        "project": "birchwood-ranch",
+        "clue": "early",
+        "kb": 4,
+        "topic": "birchwood-ranch"
+      },
+      {
+        "name": "todo_week43.md",
+        "project": "birchwood-ranch",
+        "clue": "mid",
+        "kb": 5,
+        "topic": "birchwood-ranch"
+      },
+      {
+        "name": "HarborPoint_3B_floorplan_scan.pdf",
+        "project": "harbor-point-condo",
+        "clue": "name",
+        "kb": 410,
+        "topic": ""
+      },
+      {
+        "name": "harbor_point_hoa_docs.zip",
+        "project": "harbor-point-condo",
+        "clue": "name",
+        "kb": 860,
+        "topic": ""
+      },
+      {
+        "name": "email_draft_hoa.txt",
+        "project": "harbor-point-condo",
+        "clue": "early",
+        "kb": 2,
+        "topic": "harbor-point-condo"
+      },
+      {
+        "name": "checklist.md",
+        "project": "harbor-point-condo",
+        "clue": "mid",
+        "kb": 7,
+        "topic": "harbor-point-condo"
+      },
+      {
+        "name": "unit_pricing.csv",
+        "project": "harbor-point-condo",
+        "clue": "mid",
+        "kb": 9,
+        "topic": "harbor-point-condo"
+      },
+      {
+        "name": "showing_mailer_proof_v3.pdf",
+        "project": "showing-day-mailers",
+        "clue": "name",
+        "kb": 690,
+        "topic": ""
+      },
+      {
+        "name": "mailer_QR_code_export.png",
+        "project": "showing-day-mailers",
+        "clue": "name",
+        "kb": 42,
+        "topic": ""
+      },
+      {
+        "name": "mailer_copy_v2.md",
+        "project": "showing-day-mailers",
+        "clue": "name",
+        "kb": 3,
+        "topic": "showing-day-mailers"
+      },
+      {
+        "name": "printer_quote_reply.txt",
+        "project": "showing-day-mailers",
+        "clue": "early",
+        "kb": 2,
+        "topic": "showing-day-mailers"
+      },
+      {
+        "name": "design_feedback.txt",
+        "project": "showing-day-mailers",
+        "clue": "mid",
+        "kb": 4,
+        "topic": "showing-day-mailers"
+      },
+      {
+        "name": "layout_settings.json",
+        "project": "showing-day-mailers",
+        "clue": "early",
+        "kb": 3,
+        "topic": "showing-day-mailers"
+      },
+      {
+        "name": "CE_fair_housing_course_receipt.pdf",
+        "project": "ce-renewal-hours",
+        "clue": "name",
+        "kb": 95,
+        "topic": ""
+      },
+      {
+        "name": "ce_hours_tracker.csv",
+        "project": "ce-renewal-hours",
+        "clue": "name",
+        "kb": 2,
+        "topic": "ce-renewal-hours"
+      },
+      {
+        "name": "study_notes.md",
+        "project": "ce-renewal-hours",
+        "clue": "early",
+        "kb": 11,
+        "topic": "ce-renewal-hours"
+      },
+      {
+        "name": "reminders.txt",
+        "project": "ce-renewal-hours",
+        "clue": "mid",
+        "kb": 3,
+        "topic": "ce-renewal-hours"
+      },
+      {
+        "name": "quiz_answers_draft.txt",
+        "project": "ce-renewal-hours",
+        "clue": "mid",
+        "kb": 5,
+        "topic": "ce-renewal-hours"
+      },
+      {
+        "name": "meeting_notes_misc.md",
+        "project": null,
+        "clue": "deep",
+        "kb": 18,
+        "topic": "412-maple-ave"
+      },
+      {
+        "name": "brokerage_newsletter_oct.txt",
+        "project": null,
+        "clue": "deep",
+        "kb": 22,
+        "topic": "birchwood-ranch"
+      },
+      {
+        "name": "scratch.md",
+        "project": null,
+        "clue": "deep",
+        "kb": 14,
+        "topic": "harbor-point-condo"
+      },
+      {
+        "name": "export_2026-10-09.csv",
+        "project": null,
+        "clue": "deep",
+        "kb": 27,
+        "topic": "showing-day-mailers"
+      },
+      {
+        "name": "journal.txt",
+        "project": null,
+        "clue": "deep",
+        "kb": 31,
+        "topic": "ce-renewal-hours"
+      },
+      {
+        "name": "IMG_4471.HEIC",
+        "project": null,
+        "clue": "none",
+        "kb": 640,
+        "topic": ""
+      },
+      {
+        "name": "IMG_4472.jpg",
+        "project": null,
+        "clue": "none",
+        "kb": 520,
+        "topic": ""
+      },
+      {
+        "name": "DSC00312.JPG",
+        "project": null,
+        "clue": "none",
+        "kb": 880,
+        "topic": ""
+      },
+      {
+        "name": "Scan_20261012.pdf",
+        "project": null,
+        "clue": "none",
+        "kb": 300,
+        "topic": ""
+      },
+      {
+        "name": "Zoom_6.2.3.dmg",
+        "project": null,
+        "clue": "none",
+        "kb": 900,
+        "topic": ""
+      },
+      {
+        "name": "Screenshot 2026-10-17 at 9.41.22 AM.png",
+        "project": null,
+        "clue": "none",
+        "kb": 210,
+        "topic": ""
+      },
+      {
+        "name": "document (1).docx",
+        "project": null,
+        "clue": "none",
+        "kb": 48,
+        "topic": ""
+      },
+      {
+        "name": "budget_2026.xlsx",
+        "project": null,
+        "clue": "none",
+        "kb": 36,
+        "topic": ""
+      },
+      {
+        "name": "grocery_list.txt",
+        "project": null,
+        "clue": "none",
+        "kb": 1,
+        "topic": ""
+      },
+      {
+        "name": "untitled.py",
+        "project": null,
+        "clue": "none",
+        "kb": 2,
+        "topic": ""
+      },
+      {
+        "name": "car_insurance_renewal.pdf",
+        "project": null,
+        "clue": "none",
+        "kb": 160,
+        "topic": ""
+      },
+      {
+        "name": "archive.zip",
+        "project": null,
+        "clue": "none",
+        "kb": 740,
+        "topic": ""
+      }
+    ]
+  },
+  "persona": "a real estate agent prepping three listings, designing open house flyers, and finishing continuing education credits"
+}

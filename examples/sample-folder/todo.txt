@@ -1,0 +1,3 @@
+1. fix latency calibration screen
+2. export beatmap editor json
+3. test gamepad on booth PC

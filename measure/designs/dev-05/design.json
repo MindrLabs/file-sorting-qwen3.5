@@ -1,0 +1,376 @@
+{
+  "number": 8,
+  "language": "en",
+  "attempts": 2,
+  "models": [
+    "claude-opus-5-5"
+  ],
+  "redraw_kinds": {
+    "leak": 1
+  },
+  "design": {
+    "projects": [
+      {
+        "name": "respondent-memorandum",
+        "clue": "Reminder: Respondent's memo argues the warrantless geofence search in State v. Okafor fell within the good-faith exception — cut to 35 pages before Nov 14."
+      },
+      {
+        "name": "oral-argument-practice",
+        "clue": "Practice round Thursday 6pm in Room 214: 15 min per side, Prof. Lindqvist will sit as Chief Justice and push hard on the standing question."
+      },
+      {
+        "name": "judicial-internship-apps",
+        "clue": "Applications for Judge Alvarez's chambers (D.N.J.) close Dec 1 — need writing sample, unofficial transcript, and two recommenders confirmed."
+      },
+      {
+        "name": "torts-outline",
+        "clue": "Outline Palsgraf under proximate cause: Cardozo's foreseeable-plaintiff rule vs. Andrews's dissent, then tie in the eggshell plaintiff cases from Prof. Hart's slides."
+      },
+      {
+        "name": "civpro-flashcards",
+        "clue": "Card set 7: International Shoe minimum contacts, purposeful availment (Burger King), and the Rule 12(h) waiver trap for personal jurisdiction defenses."
+      },
+      {
+        "name": "apartment-sublease",
+        "clue": "Subletter for the Elm St unit takes over Jan 1 at $1,150/mo; landlord Mr. Petrov needs their signed consent form and the deposit transfer by Dec 15."
+      }
+    ],
+    "existing": [
+      {
+        "project": "respondent-memorandum",
+        "file": "Respondent_Memo_outline_v1.docx",
+        "kb": 48
+      },
+      {
+        "project": "judicial-internship-apps",
+        "file": "resume_2026_oct.pdf",
+        "kb": 92
+      }
+    ],
+    "files": [
+      {
+        "name": "Respondent_Memo_draft_v3_final (2).docx",
+        "project": "respondent-memorandum",
+        "clue": "name",
+        "kb": 86,
+        "topic": ""
+      },
+      {
+        "name": "respondent_memo_table_of_authorities.md",
+        "project": "respondent-memorandum",
+        "clue": "name",
+        "kb": 6,
+        "topic": "respondent-memorandum"
+      },
+      {
+        "name": "oral_argument_practice_schedule.xlsx",
+        "project": "oral-argument-practice",
+        "clue": "name",
+        "kb": 34,
+        "topic": ""
+      },
+      {
+        "name": "oral-argument-rebuttal-notes.txt",
+        "project": "oral-argument-practice",
+        "clue": "name",
+        "kb": 3,
+        "topic": "oral-argument-practice"
+      },
+      {
+        "name": "Judge_Alvarez_internship_cover_letter_v2.docx",
+        "project": "judicial-internship-apps",
+        "clue": "name",
+        "kb": 41,
+        "topic": ""
+      },
+      {
+        "name": "judicial_internship_tracker.csv",
+        "project": "judicial-internship-apps",
+        "clue": "name",
+        "kb": 4,
+        "topic": "judicial-internship-apps"
+      },
+      {
+        "name": "Torts_Outline_Negligence_FINAL.docx",
+        "project": "torts-outline",
+        "clue": "name",
+        "kb": 120,
+        "topic": ""
+      },
+      {
+        "name": "torts_outline_intentional_torts.md",
+        "project": "torts-outline",
+        "clue": "name",
+        "kb": 18,
+        "topic": "torts-outline"
+      },
+      {
+        "name": "civpro_flashcards_personal_jurisdiction.csv",
+        "project": "civpro-flashcards",
+        "clue": "name",
+        "kb": 12,
+        "topic": "civpro-flashcards"
+      },
+      {
+        "name": "CivPro_Flashcards_export.zip",
+        "project": "civpro-flashcards",
+        "clue": "name",
+        "kb": 340,
+        "topic": ""
+      },
+      {
+        "name": "sublease_agreement_Elm_St_signed.pdf",
+        "project": "apartment-sublease",
+        "clue": "name",
+        "kb": 210,
+        "topic": ""
+      },
+      {
+        "name": "apartment_sublease_listing_photos.zip",
+        "project": "apartment-sublease",
+        "clue": "name",
+        "kb": 860,
+        "topic": ""
+      },
+      {
+        "name": "IMG_4412_sublease_bedroom.HEIC",
+        "project": "apartment-sublease",
+        "clue": "name",
+        "kb": 780,
+        "topic": ""
+      },
+      {
+        "name": "notes_1014.txt",
+        "project": "respondent-memorandum",
+        "clue": "early",
+        "kb": 5,
+        "topic": "respondent-memorandum"
+      },
+      {
+        "name": "draft_section_III.md",
+        "project": "respondent-memorandum",
+        "clue": "mid",
+        "kb": 9,
+        "topic": "respondent-memorandum"
+      },
+      {
+        "name": "untitled.txt",
+        "project": "oral-argument-practice",
+        "clue": "early",
+        "kb": 2,
+        "topic": "oral-argument-practice"
+      },
+      {
+        "name": "q_and_a.md",
+        "project": "oral-argument-practice",
+        "clue": "mid",
+        "kb": 7,
+        "topic": "oral-argument-practice"
+      },
+      {
+        "name": "email_draft.txt",
+        "project": "judicial-internship-apps",
+        "clue": "early",
+        "kb": 3,
+        "topic": "judicial-internship-apps"
+      },
+      {
+        "name": "recs.txt",
+        "project": "judicial-internship-apps",
+        "clue": "mid",
+        "kb": 4,
+        "topic": "judicial-internship-apps"
+      },
+      {
+        "name": "todo.md",
+        "project": "judicial-internship-apps",
+        "clue": "mid",
+        "kb": 3,
+        "topic": "judicial-internship-apps"
+      },
+      {
+        "name": "chapter4_summary.md",
+        "project": "torts-outline",
+        "clue": "early",
+        "kb": 14,
+        "topic": "torts-outline"
+      },
+      {
+        "name": "class_notes_oct8.txt",
+        "project": "torts-outline",
+        "clue": "mid",
+        "kb": 11,
+        "topic": "torts-outline"
+      },
+      {
+        "name": "cards.json",
+        "project": "civpro-flashcards",
+        "clue": "early",
+        "kb": 22,
+        "topic": "civpro-flashcards"
+      },
+      {
+        "name": "rule12_notes.md",
+        "project": "civpro-flashcards",
+        "clue": "mid",
+        "kb": 6,
+        "topic": "civpro-flashcards"
+      },
+      {
+        "name": "scratch.py",
+        "project": "civpro-flashcards",
+        "clue": "early",
+        "kb": 4,
+        "topic": "civpro-flashcards"
+      },
+      {
+        "name": "message_to_dana.txt",
+        "project": "apartment-sublease",
+        "clue": "early",
+        "kb": 2,
+        "topic": "apartment-sublease"
+      },
+      {
+        "name": "utilities_split.csv",
+        "project": "apartment-sublease",
+        "clue": "mid",
+        "kb": 3,
+        "topic": "apartment-sublease"
+      },
+      {
+        "name": "journal_oct.txt",
+        "project": null,
+        "clue": "deep",
+        "kb": 16,
+        "topic": "apartment-sublease"
+      },
+      {
+        "name": "notes.md",
+        "project": null,
+        "clue": "deep",
+        "kb": 28,
+        "topic": "respondent-memorandum"
+      },
+      {
+        "name": "export_2026-10-02.txt",
+        "project": null,
+        "clue": "deep",
+        "kb": 34,
+        "topic": "torts-outline"
+      },
+      {
+        "name": "misc.txt",
+        "project": null,
+        "clue": "deep",
+        "kb": 9,
+        "topic": "oral-argument-practice"
+      },
+      {
+        "name": "chat_log.json",
+        "project": null,
+        "clue": "deep",
+        "kb": 25,
+        "topic": "judicial-internship-apps"
+      },
+      {
+        "name": "IMG_2047.HEIC",
+        "project": null,
+        "clue": "none",
+        "kb": 820,
+        "topic": ""
+      },
+      {
+        "name": "Screenshot 2026-10-11 at 9.42.17 PM.png",
+        "project": null,
+        "clue": "none",
+        "kb": 410,
+        "topic": ""
+      },
+      {
+        "name": "scan0003.pdf",
+        "project": null,
+        "clue": "none",
+        "kb": 260,
+        "topic": ""
+      },
+      {
+        "name": "Zoom_6.2.3.dmg",
+        "project": null,
+        "clue": "none",
+        "kb": 880,
+        "topic": ""
+      },
+      {
+        "name": "bar_prep_coupon.pdf",
+        "project": null,
+        "clue": "none",
+        "kb": 64,
+        "topic": ""
+      },
+      {
+        "name": "DSC_0921.JPG",
+        "project": null,
+        "clue": "none",
+        "kb": 760,
+        "topic": ""
+      },
+      {
+        "name": "grocery_list.txt",
+        "project": null,
+        "clue": "none",
+        "kb": 1,
+        "topic": ""
+      },
+      {
+        "name": "Spotify_Wrapped_2025.png",
+        "project": null,
+        "clue": "none",
+        "kb": 300,
+        "topic": ""
+      },
+      {
+        "name": "invoice_88213.pdf",
+        "project": null,
+        "clue": "none",
+        "kb": 70,
+        "topic": ""
+      },
+      {
+        "name": "data.csv",
+        "project": null,
+        "clue": "none",
+        "kb": 5,
+        "topic": ""
+      },
+      {
+        "name": "Document (1).docx",
+        "project": null,
+        "clue": "none",
+        "kb": 30,
+        "topic": ""
+      },
+      {
+        "name": "backup_notes.zip",
+        "project": null,
+        "clue": "none",
+        "kb": 450,
+        "topic": ""
+      },
+      {
+        "name": "requirements.txt",
+        "project": null,
+        "clue": "none",
+        "kb": 1,
+        "topic": ""
+      },
+      {
+        "name": "PXL_20261003_184522.jpg",
+        "project": null,
+        "clue": "none",
+        "kb": 690,
+        "topic": ""
+      }
+    ]
+  },
+  "persona": "a first-year law student preparing a moot court brief and applying for summer clerkships"
+}

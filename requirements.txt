@@ -1,0 +1,8 @@
+# Tested with the release. The measurements ran on a model-compose build based on 0.4.120 that
+# also passes presence_penalty and min_p (see .env.sample). model-compose imports torch to pick a device
+# even for llama.cpp, so torch is needed although the model never uses it.
+model-compose==0.4.120
+llama-cpp-python==0.3.36
+torch==2.14.1
+# Downloads the GGUF file from Hugging Face; none of the packages above pulls it in.
+huggingface_hub==2.2.0

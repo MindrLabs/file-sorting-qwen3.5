@@ -1,0 +1,370 @@
+{
+  "number": 3,
+  "language": "ko",
+  "attempts": 1,
+  "models": [
+    "claude-opus-5-5"
+  ],
+  "redraw_kinds": {},
+  "design": {
+    "projects": [
+      {
+        "name": "연말정산-자료수집",
+        "clue": "직원분들 2026년 귀속 연말정산 간소화 자료와 부양가족 공제 신고서는 1월 20일까지 회계팀으로 제출 부탁드립니다."
+      },
+      {
+        "name": "법인카드-정산",
+        "clue": "10월분 법인카드 사용내역 중 영수증 미첨부 건은 사용자별로 소명서를 작성해 월말 마감 전까지 제출해야 합니다."
+      },
+      {
+        "name": "세무회계-자격증",
+        "clue": "세무회계 2급 실기 대비: 감가상각비 계산과 퇴직급여충당부채 문제는 매일 오답노트로 복습하기."
+      },
+      {
+        "name": "부가세-신고",
+        "clue": "2026년 2기 예정 부가가치세 신고 기한은 10월 27일이며, 매입세금계산서 누락분을 홈택스 자료와 대조할 것."
+      },
+      {
+        "name": "거래처-미수금",
+        "clue": "거래처별 미수금 잔액 확인서를 발송하고, 3개월 이상 연체된 채권은 대손 처리 여부를 팀장님께 보고드림."
+      }
+    ],
+    "existing": [
+      {
+        "project": "법인카드-정산",
+        "file": "법인카드_9월_정산완료.xlsx",
+        "kb": 92
+      },
+      {
+        "project": "세무회계-자격증",
+        "file": "세무회계2급_이론요약_v2.pdf",
+        "kb": 410
+      }
+    ],
+    "files": [
+      {
+        "name": "연말정산_간소화자료_김대리.pdf",
+        "project": "연말정산-자료수집",
+        "clue": "name",
+        "kb": 340,
+        "topic": ""
+      },
+      {
+        "name": "2026_부양가족공제신고서_양식.xlsx",
+        "project": "연말정산-자료수집",
+        "clue": "name",
+        "kb": 45,
+        "topic": ""
+      },
+      {
+        "name": "법인카드_10월_사용내역_export.xlsx",
+        "project": "법인카드-정산",
+        "clue": "name",
+        "kb": 88,
+        "topic": ""
+      },
+      {
+        "name": "법인카드영수증_스캔_20261015.pdf",
+        "project": "법인카드-정산",
+        "clue": "name",
+        "kb": 620,
+        "topic": ""
+      },
+      {
+        "name": "세무회계2급_기출_2025회.pdf",
+        "project": "세무회계-자격증",
+        "clue": "name",
+        "kb": 780,
+        "topic": ""
+      },
+      {
+        "name": "세무회계_오답노트_v3.md",
+        "project": "세무회계-자격증",
+        "clue": "name",
+        "kb": 12,
+        "topic": "세무회계-자격증"
+      },
+      {
+        "name": "부가세_2기예정_매입세금계산서.xlsx",
+        "project": "부가세-신고",
+        "clue": "name",
+        "kb": 130,
+        "topic": ""
+      },
+      {
+        "name": "부가세신고_체크리스트.txt",
+        "project": "부가세-신고",
+        "clue": "name",
+        "kb": 3,
+        "topic": "부가세-신고"
+      },
+      {
+        "name": "미수금_잔액확인서_거래처별_final (2).docx",
+        "project": "거래처-미수금",
+        "clue": "name",
+        "kb": 56,
+        "topic": ""
+      },
+      {
+        "name": "거래처_연체채권_목록.csv",
+        "project": "거래처-미수금",
+        "clue": "name",
+        "kb": 8,
+        "topic": "거래처-미수금"
+      },
+      {
+        "name": "연말정산_의료비영수증_IMG_5502.heic",
+        "project": "연말정산-자료수집",
+        "clue": "name",
+        "kb": 860,
+        "topic": ""
+      },
+      {
+        "name": "법인카드_소명서_박과장.docx",
+        "project": "법인카드-정산",
+        "clue": "name",
+        "kb": 34,
+        "topic": ""
+      },
+      {
+        "name": "세무회계_실기_강의요약.txt",
+        "project": "세무회계-자격증",
+        "clue": "name",
+        "kb": 9,
+        "topic": "세무회계-자격증"
+      },
+      {
+        "name": "연말정산_공제항목_정리.md",
+        "project": "연말정산-자료수집",
+        "clue": "name",
+        "kb": 6,
+        "topic": "연말정산-자료수집"
+      },
+      {
+        "name": "부가세_예정신고서_최종.pdf",
+        "project": "부가세-신고",
+        "clue": "name",
+        "kb": 210,
+        "topic": ""
+      },
+      {
+        "name": "메모_1017.txt",
+        "project": "법인카드-정산",
+        "clue": "early",
+        "kb": 2,
+        "topic": "법인카드-정산"
+      },
+      {
+        "name": "회의록_정리.md",
+        "project": "거래처-미수금",
+        "clue": "mid",
+        "kb": 5,
+        "topic": "거래처-미수금"
+      },
+      {
+        "name": "untitled.txt",
+        "project": "세무회계-자격증",
+        "clue": "early",
+        "kb": 1,
+        "topic": "세무회계-자격증"
+      },
+      {
+        "name": "공지_초안.txt",
+        "project": "연말정산-자료수집",
+        "clue": "early",
+        "kb": 2,
+        "topic": "연말정산-자료수집"
+      },
+      {
+        "name": "정리중.csv",
+        "project": "부가세-신고",
+        "clue": "mid",
+        "kb": 14,
+        "topic": "부가세-신고"
+      },
+      {
+        "name": "새 텍스트 문서.txt",
+        "project": "연말정산-자료수집",
+        "clue": "mid",
+        "kb": 3,
+        "topic": "연말정산-자료수집"
+      },
+      {
+        "name": "notes.md",
+        "project": "부가세-신고",
+        "clue": "early",
+        "kb": 4,
+        "topic": "부가세-신고"
+      },
+      {
+        "name": "데이터_추출.py",
+        "project": "법인카드-정산",
+        "clue": "mid",
+        "kb": 6,
+        "topic": "법인카드-정산"
+      },
+      {
+        "name": "메일답장_초안.txt",
+        "project": "거래처-미수금",
+        "clue": "early",
+        "kb": 2,
+        "topic": "거래처-미수금"
+      },
+      {
+        "name": "todo_10월.md",
+        "project": "세무회계-자격증",
+        "clue": "early",
+        "kb": 3,
+        "topic": "세무회계-자격증"
+      },
+      {
+        "name": "export_20261019.json",
+        "project": "법인카드-정산",
+        "clue": "mid",
+        "kb": 18,
+        "topic": "법인카드-정산"
+      },
+      {
+        "name": "확인필요.txt",
+        "project": "거래처-미수금",
+        "clue": "mid",
+        "kb": 3,
+        "topic": "거래처-미수금"
+      },
+      {
+        "name": "임시.md",
+        "project": "연말정산-자료수집",
+        "clue": "early",
+        "kb": 2,
+        "topic": "연말정산-자료수집"
+      },
+      {
+        "name": "계산.py",
+        "project": "세무회계-자격증",
+        "clue": "mid",
+        "kb": 5,
+        "topic": "세무회계-자격증"
+      },
+      {
+        "name": "목록.csv",
+        "project": "부가세-신고",
+        "clue": "early",
+        "kb": 7,
+        "topic": "부가세-신고"
+      },
+      {
+        "name": "업무일지_2026.md",
+        "project": null,
+        "clue": "deep",
+        "kb": 28,
+        "topic": "법인카드-정산"
+      },
+      {
+        "name": "팀채팅_백업.txt",
+        "project": null,
+        "clue": "deep",
+        "kb": 35,
+        "topic": "거래처-미수금"
+      },
+      {
+        "name": "메모장_모음.txt",
+        "project": null,
+        "clue": "deep",
+        "kb": 22,
+        "topic": "세무회계-자격증"
+      },
+      {
+        "name": "log_정리.txt",
+        "project": null,
+        "clue": "deep",
+        "kb": 16,
+        "topic": "연말정산-자료수집"
+      },
+      {
+        "name": "회계팀_인수인계.md",
+        "project": null,
+        "clue": "deep",
+        "kb": 30,
+        "topic": "부가세-신고"
+      },
+      {
+        "name": "IMG_4821.JPG",
+        "project": null,
+        "clue": "none",
+        "kb": 780,
+        "topic": ""
+      },
+      {
+        "name": "KakaoTalk_20261012_143355123.png",
+        "project": null,
+        "clue": "none",
+        "kb": 310,
+        "topic": ""
+      },
+      {
+        "name": "스크린샷 2026-10-18 오후 3.22.41.png",
+        "project": null,
+        "clue": "none",
+        "kb": 420,
+        "topic": ""
+      },
+      {
+        "name": "Zoom_6.2.5.dmg",
+        "project": null,
+        "clue": "none",
+        "kb": 880,
+        "topic": ""
+      },
+      {
+        "name": "사내식당_10월메뉴.pdf",
+        "project": null,
+        "clue": "none",
+        "kb": 150,
+        "topic": ""
+      },
+      {
+        "name": "회사_조직도_2026.pdf",
+        "project": null,
+        "clue": "none",
+        "kb": 95,
+        "topic": ""
+      },
+      {
+        "name": "받은파일.zip",
+        "project": null,
+        "clue": "none",
+        "kb": 540,
+        "topic": ""
+      },
+      {
+        "name": "scan0007.pdf",
+        "project": null,
+        "clue": "none",
+        "kb": 260,
+        "topic": ""
+      },
+      {
+        "name": "제주_여행일정.txt",
+        "project": null,
+        "clue": "none",
+        "kb": 2,
+        "topic": ""
+      },
+      {
+        "name": "장보기목록.md",
+        "project": null,
+        "clue": "none",
+        "kb": 1,
+        "topic": ""
+      },
+      {
+        "name": "건강검진_결과표.pdf",
+        "project": null,
+        "clue": "none",
+        "kb": 330,
+        "topic": ""
+      }
+    ]
+  },
+  "persona": "서울 중소기업의 회계 담당자: 연말정산 자료 수집과 법인카드 사용 내역 정산, 세무회계 자격증 공부를 병행한다"
+}

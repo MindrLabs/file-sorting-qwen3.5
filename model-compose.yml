@@ -1,0 +1,538 @@
+# Code holds the flow; the model only names projects and picks one per file. Nothing moves until
+# the person approves, and every step stays inside ORGANIZE_ROOT (tools/safe_paths.py).
+controller:
+  adapter:
+    type: http-server
+    port: ${env.PORT | 8080}
+    base_path: /api
+  webui:
+    driver: gradio
+    port: ${env.SERVER_PORT | 8081}
+
+workflows:
+  # Each file is asked four times with the list rotated; it moves only on three matching answers.
+  # The run's state rides along as `state` (tools/harness_state.py): every value a step reads is here.
+  - id: organize
+    default: true
+    title: Organize a folder
+    description: >-
+      Write one project per line as `name: what it is`. Each file is asked four times with the list in a
+      different order, and moves only when three answers agree. You approve the plan once, and the undo tab
+      puts it all back.
+    jobs:
+      - id: scan
+        component: organizer-cli
+        action: scan
+        input:
+          projects: "${input.projects as text @(description One project per line, name: one line about it. Leave empty to let the model name them)}"
+        output: ${output as json}
+      - id: projects
+        component: subflow
+        action: ask-projects
+        depends_on: [ scan ]
+        input:
+          listing: ${jobs.scan.output.listing}
+          folders: ${jobs.scan.output.folders}
+          state: ${jobs.scan.output.state}
+          has_list: ${jobs.scan.output.has_list}
+      - id: votes
+        component: organizer-cli
+        action: start-votes
+        depends_on: [ projects ]
+        input:
+          state: ${jobs.projects.output.state}
+        output: ${output as json}
+      - id: assign
+        type: accumulate
+        depends_on: [ votes ]
+        input: ${jobs.votes.output.items}
+        accumulator: ${jobs.votes.output.state}
+        do:
+          component: subflow
+          action: ask-file-vote
+          input:
+            item: ${item}
+            state: ${accumulator}
+      - id: decide
+        component: organizer-cli
+        action: decide-votes
+        depends_on: [ assign ]
+        input:
+          state: ${jobs.assign.output}
+        output: ${output as json}
+      - id: rounds
+        type: loop
+        depends_on: [ decide ]
+        input:
+          state: ${jobs.decide.output.state}
+          files: []
+        # Each round gets the last round's output: its state and the files the person sent back.
+        do:
+          component: subflow
+          action: approval-round
+        until:
+          input: ${output.done}
+          value: true
+        max_iteration_count: 4
+    output: ${jobs.rounds.output.outcome}
+
+  # The model's project list, for the person to edit and paste into the first tab. Nothing moves.
+  - id: draft-projects
+    title: Draft a project list
+    description: >-
+      The model reads the folder and drafts a project list. Edit it and paste it into the projects box of
+      the organize tab. No files move.
+    jobs:
+      - id: scan
+        component: organizer-cli
+        action: scan
+        input:
+          projects: ""
+        output: ${output as json}
+      - id: projects
+        component: subflow
+        action: ask-projects
+        depends_on: [ scan ]
+        input:
+          listing: ${jobs.scan.output.listing}
+          folders: ${jobs.scan.output.folders}
+          state: ${jobs.scan.output.state}
+          has_list: ${jobs.scan.output.has_list}
+      - id: draft
+        component: organizer-cli
+        action: draft
+        depends_on: [ projects ]
+        input:
+          state: ${jobs.projects.output.state}
+        output: ${output as text}
+    output: ${jobs.draft.output as text}
+
+  # One ask per file: faster than the vote, with more lines to fix.
+  - id: organize-quick
+    title: Organize quickly (one ask per file)
+    description: >-
+      Write one project per line as `name: what it is`, or leave it empty to let the model name them. Each
+      file is asked once. You approve the plan once, and the undo tab puts it all back. About 2.5 times
+      faster than the organize tab, with more lines to fix.
+    jobs:
+      - id: scan
+        component: organizer-cli
+        action: scan
+        input:
+          projects: "${input.projects as text @(description One project per line, name: one line about it. Leave empty to let the model name them)}"
+        output: ${output as json}
+      - id: projects
+        component: subflow
+        action: ask-projects
+        depends_on: [ scan ]
+        input:
+          listing: ${jobs.scan.output.listing}
+          folders: ${jobs.scan.output.folders}
+          state: ${jobs.scan.output.state}
+          has_list: ${jobs.scan.output.has_list}
+      - id: assign
+        type: accumulate
+        depends_on: [ projects ]
+        input: ${jobs.scan.output.files}
+        accumulator: ${jobs.projects.output.state}
+        do:
+          component: subflow
+          action: ask-file
+          input:
+            file: ${item}
+            state: ${accumulator}
+      - id: rounds
+        type: loop
+        depends_on: [ assign ]
+        input:
+          state: ${jobs.assign.output}
+          files: []
+        # Each round gets the last round's output: its state and the files the person sent back.
+        do:
+          component: subflow
+          action: approval-round
+        until:
+          input: ${output.done}
+          value: true
+        max_iteration_count: 4
+    output: ${jobs.rounds.output.outcome}
+
+  - id: undo
+    title: Undo the last organize
+    description: Puts back every move of the most recently approved plan.
+    job:
+      component: organizer-cli
+      action: undo
+      output: ${output as text}
+
+  # The only step that moves files. The person answers at `approve`, and the answer replaces the plan
+  # there: empty approves, edited lines run instead, REJECT: sends the feedback back.
+  - id: apply-plan
+    private: true
+    jobs:
+      - id: preview
+        component: organizer-cli
+        action: preview
+        input:
+          plan: ${input.plan}
+        output: ${output as text}
+      - id: approve
+        component: organizer-cli
+        action: approve
+        depends_on: [ preview ]
+        input: ${jobs.preview.output}
+        interrupt:
+          before:
+            message: >-
+              These files move as the plan in metadata says. `# skip:` lines cannot move and are left out.
+              To approve, leave Answer empty and press Resume.
+              To edit or reject, write JSON with the id above in Answer (line breaks as \n):
+              edit with {"<id>": "a.txt => project\nb.txt => project"}, reject with {"<id>": "REJECT: reason"}.
+              Text that is not JSON freezes the panel; then press Cancel and run again.
+              After approving, the undo tab still puts everything back.
+            metadata:
+              plan: ${job.input}
+        output: ${output as text}
+      - id: apply
+        component: organizer-cli
+        action: apply
+        depends_on: [ approve ]
+        input:
+          plan: ${jobs.approve.output}
+          shown: ${jobs.preview.output}
+        output: ${output as text}
+
+  # A model's list that fails the check is asked once more with the reason; the second try is always kept.
+  - id: ask-projects
+    private: true
+    jobs:
+      # A list the person gave goes straight to the check; only an empty box asks the model for one.
+      - id: route
+        type: if
+        input: ${input.has_list}
+        value: "1"
+        if_true: given
+        if_false: ask
+      - id: given
+        component: organizer-cli
+        action: accept-projects
+        input:
+          state: ${input.state}
+          reply: ""
+          last_try: "1"
+        output: ${output as json}
+      - id: ask
+        type: loop
+        input:
+          listing: ${input.listing}
+          folders: ${input.folders}
+          state: ${input.state}
+          error: ""
+          last_try: "0"
+        do:
+          component: subflow
+          action: ask-projects-once
+        until:
+          input: ${output.ok}
+          value: true
+        max_iteration_count: 2
+    output: ${jobs.given.output | ${jobs.ask.output}}
+
+  - id: ask-projects-once
+    private: true
+    jobs:
+      - id: ask
+        component: qwen
+        action: choose-projects
+        input:
+          listing:
+            "+":
+              - ${input.listing}
+              - ${input.error}
+          folders: ${input.folders}
+        output: ${output.choices[0].content[0].text as text}
+      - id: check
+        component: organizer-cli
+        action: accept-projects
+        depends_on: [ ask ]
+        input:
+          state: ${input.state}
+          reply: ${jobs.ask.output}
+          last_try: ${input.last_try}
+        output: ${output as json}
+    output:
+      ok: ${jobs.check.output.ok}
+      state: ${jobs.check.output.state}
+      listing: ${input.listing}
+      folders: ${input.folders}
+      error:
+        "+":
+          - "\n\n"
+          - ${jobs.check.output.error}
+      last_try: "1"
+
+  - id: ask-file
+    private: true
+    jobs:
+      - id: menu
+        component: organizer-cli
+        action: menu
+        input:
+          state: ${input.state}
+        output: ${output as text}
+      - id: ask
+        type: loop
+        depends_on: [ menu ]
+        input:
+          menu: ${jobs.menu.output}
+          file: ${input.file}
+          state: ${input.state}
+          error: ""
+          last_try: "0"
+        do:
+          component: subflow
+          action: ask-file-once
+        until:
+          input: ${output.ok}
+          value: true
+        max_iteration_count: 2
+    output: ${jobs.ask.output.state}
+
+  - id: ask-file-once
+    private: true
+    jobs:
+      - id: ask
+        component: qwen
+        action: choose-file
+        input:
+          menu: ${input.menu}
+          card: ${input.file.card}
+          hint: ${input.file.hint}
+          error: ${input.error}
+        output: ${output.choices[0].content[0].text as text}
+      - id: check
+        component: organizer-cli
+        action: accept-pick
+        depends_on: [ ask ]
+        input:
+          state: ${input.state}
+          name: ${input.file.name}
+          reply: ${jobs.ask.output}
+          last_try: ${input.last_try}
+        output: ${output as json}
+    output:
+      ok: ${jobs.check.output.ok}
+      state: ${jobs.check.output.state}
+      menu: ${input.menu}
+      file: ${input.file}
+      error:
+        "+":
+          - "\n\n"
+          - ${jobs.check.output.error}
+      last_try: "1"
+
+  - id: ask-file-vote
+    private: true
+    jobs:
+      - id: ask
+        component: qwen
+        action: choose-file
+        input:
+          menu: ${input.item.menu}
+          card: ${input.item.card}
+          hint: ${input.item.hint}
+          error: ""
+        output: ${output.choices[0].content[0].text as text}
+      - id: record
+        component: organizer-cli
+        action: record-vote
+        depends_on: [ ask ]
+        input:
+          state: ${input.state}
+          name: ${input.item.name}
+          rotation: ${input.item.rotation}
+          reply: ${jobs.ask.output}
+        output: ${output as json}
+    output: ${jobs.record.output.state}
+
+  # One approval round: files the person sent back last round are asked again first (none in the
+  # first round), then the plan is assembled, shown for approval and applied.
+  - id: approval-round
+    private: true
+    jobs:
+      - id: redo
+        type: accumulate
+        input: ${input.files}
+        accumulator: ${input.state}
+        do:
+          component: subflow
+          action: ask-file
+          input:
+            file: ${item}
+            state: ${accumulator}
+      - id: plan
+        component: organizer-cli
+        action: assemble
+        depends_on: [ redo ]
+        input:
+          state: ${jobs.redo.output}
+        output: ${output as text}
+      - id: approve
+        component: subflow
+        action: apply-plan
+        depends_on: [ plan ]
+        input:
+          plan: ${jobs.plan.output}
+      - id: next
+        component: organizer-cli
+        action: next-round
+        depends_on: [ approve ]
+        input:
+          state: ${jobs.redo.output}
+          outcome: ${jobs.approve.output}
+        output: ${output as json}
+    output: ${jobs.next.output}
+
+components:
+  - id: qwen
+    type: model
+    task: chat-completion
+    driver: llamacpp
+    model:
+      provider: huggingface
+      repository: ${env.LLM_REPO | unsloth/Qwen3.5-4B-GGUF}
+      filename: ${env.LLM_GGUF | Qwen3.5-4B-Q8_0.gguf}
+      # The repository commit the file comes from, so a later re-upload cannot change the model.
+      revision: ${env.LLM_REVISION | main}
+    max_concurrent_count: 1
+    reasoning_parser:
+      start_tag: '<think>'
+      end_tag: '</think>'
+    options:
+      n_ctx: ${env.LLM_N_CTX | 16384}
+      n_gpu_layers: ${env.LLM_GPU_LAYERS | -1}
+    actions:
+      - id: choose-projects
+        tools: []
+        max_output_length: 512
+        params: &choose_params
+          # Plain `${env.X | default}`: with `as number` the environment value is ignored.
+          temperature: ${env.HARNESS_TEMPERATURE | 0.2}
+          top_p: 0.9
+          presence_penalty: ${env.LLM_PRESENCE_PENALTY | 0.0}
+          min_p: ${env.LLM_MIN_P | 0.05}
+        messages:
+          - role: system
+            content:
+              "+":
+                - "You sort the files of one folder into projects. Read the file list and name the projects these files belong to, between 2 and 8. A project is one piece of work the person is doing. It groups several files. It is never a file name and never a file type. Give each piece of work one name only, even when its files look different.\n\nFolders that already exist: "
+                - ${input.folders}
+                - "\nKeep their names when files belong to them.\n\nReturn only a JSON array of objects with a short lowercase name and, in under 8 words, what the files are for: [{\"name\": \"...\", \"about\": \"...\"}]. No prose.\n\n/no_think"
+          - role: user
+            content: ${input.listing}
+
+      - id: choose-file
+        tools: []
+        max_output_length: 16
+        params: *choose_params
+        messages:
+          - role: system
+            content:
+              "+":
+                - "Pick the project this file belongs to.\n\nProjects:\n"
+                - ${input.menu}
+                - "\n\nAnswer with one id only, like P2. If you are not sure, or the file fits none of them, answer none.\n\n/no_think"
+          - role: user
+            content:
+              "+":
+                - ${input.card}
+                - ${input.hint}
+                - ${input.error}
+
+  # argv lists, never `sh -c`: the plan and paths come from the model and reach no shell.
+  - id: organizer-cli
+    type: shell
+    actions:
+      - id: preview
+        command: [ python3, tools/organizer.py, preview, "${env.ORGANIZE_ROOT | ./workspace}", "${input.plan}" ]
+        timeout: 10.0
+        output: ${result.stdout}
+      - id: approve
+        command: [ python3, tools/organizer.py, approve, "${env.ORGANIZE_ROOT | ./workspace}", "${input}" ]
+        timeout: 10.0
+        output: ${result.stdout}
+      - id: apply
+        command: [ python3, tools/organizer.py, apply, "${env.ORGANIZE_ROOT | ./workspace}", "${input.plan}", "${input.shown}" ]
+        timeout: 60.0
+        output: ${result.stdout}
+      - id: undo
+        command: [ python3, tools/organizer.py, undo, "${env.ORGANIZE_ROOT | ./workspace}" ]
+        timeout: 60.0
+        output: ${result.stdout}
+      # An empty box renders one space, read as no list.
+      - id: scan
+        command: [ python3, tools/organizer.py, scan, "${env.ORGANIZE_ROOT | ./workspace}", "${input.projects | }" ]
+        timeout: 30.0
+        output: ${result.stdout}
+      - id: accept-projects
+        command: [ python3, tools/organizer.py, accept-projects, "${env.ORGANIZE_ROOT | ./workspace}", "${input.state}", "${input.reply}", "${input.last_try}" ]
+        timeout: 10.0
+        output: ${result.stdout}
+      - id: menu
+        command: [ python3, tools/organizer.py, menu, "${env.ORGANIZE_ROOT | ./workspace}", "${input.state}" ]
+        timeout: 10.0
+        output: ${result.stdout}
+      - id: draft
+        command: [ python3, tools/organizer.py, draft, "${env.ORGANIZE_ROOT | ./workspace}", "${input.state}" ]
+        timeout: 10.0
+        output: ${result.stdout}
+      - id: accept-pick
+        command: [ python3, tools/organizer.py, accept-pick, "${env.ORGANIZE_ROOT | ./workspace}", "${input.state}", "${input.name}", "${input.reply}", "${input.last_try}" ]
+        timeout: 10.0
+        output: ${result.stdout}
+      - id: start-votes
+        command: [ python3, tools/organizer.py, start-votes, "${env.ORGANIZE_ROOT | ./workspace}", "${input.state}" ]
+        timeout: 30.0
+        output: ${result.stdout}
+      - id: record-vote
+        command: [ python3, tools/organizer.py, record-vote, "${env.ORGANIZE_ROOT | ./workspace}", "${input.state}", "${input.name}", "${input.rotation}", "${input.reply}" ]
+        timeout: 10.0
+        output: ${result.stdout}
+      - id: decide-votes
+        command: [ python3, tools/organizer.py, decide-votes, "${env.ORGANIZE_ROOT | ./workspace}", "${input.state}" ]
+        timeout: 30.0
+        output: ${result.stdout}
+      - id: assemble
+        command: [ python3, tools/organizer.py, assemble, "${env.ORGANIZE_ROOT | ./workspace}", "${input.state}" ]
+        timeout: 10.0
+        output: ${result.stdout}
+      - id: next-round
+        command: [ python3, tools/organizer.py, next-round, "${env.ORGANIZE_ROOT | ./workspace}", "${input.state}", "${input.outcome}" ]
+        timeout: 10.0
+        output: ${result.stdout}
+
+  - id: subflow
+    type: workflow
+    actions:
+      - id: apply-plan
+        default: true
+        workflow: apply-plan
+        input: ${input}
+      - id: ask-projects
+        workflow: ask-projects
+        input: ${input}
+      - id: ask-projects-once
+        workflow: ask-projects-once
+        input: ${input}
+      - id: ask-file
+        workflow: ask-file
+        input: ${input}
+      - id: ask-file-once
+        workflow: ask-file-once
+        input: ${input}
+      - id: ask-file-vote
+        workflow: ask-file-vote
+        input: ${input}
+      - id: approval-round
+        workflow: approval-round
+        input: ${input}

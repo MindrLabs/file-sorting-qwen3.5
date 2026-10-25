@@ -1,0 +1,362 @@
+{
+  "number": 13,
+  "language": "en",
+  "attempts": 3,
+  "models": [
+    "claude-opus-5-5"
+  ],
+  "redraw_kinds": {
+    "leak": 2
+  },
+  "design": {
+    "projects": [
+      {
+        "name": "ltc-application",
+        "clue": "Caseworker said the five-year lookback means every bank statement since 2021 has to go in the long-term care packet before Nov 15."
+      },
+      {
+        "name": "agency-rota",
+        "clue": "BrightCare can only cover Mom's Thursday mornings if Denise swaps to the 7am-1pm shift; confirm with the agency coordinator."
+      },
+      {
+        "name": "tuesday-circle",
+        "clue": "Reminder: Tuesday circle meets 7pm in the church annex; I'm bringing coffee and leading the sundowning discussion this week."
+      },
+      {
+        "name": "durable-poa",
+        "clue": "Attorney Feld needs Mom signing the durable power of attorney on a good day, with two witnesses who aren't family."
+      },
+      {
+        "name": "neurology-followup",
+        "clue": "Dr. Okafor wants a log of word-finding lapses and night wandering before the November neurology recheck."
+      },
+      {
+        "name": "bathroom-retrofit",
+        "clue": "Contractor quoted $2,340 for the curbless shower, two grab bars and the raised toilet seat at Mom's place."
+      }
+    ],
+    "existing": [
+      {
+        "project": "durable-poa",
+        "file": "POA_signed_page1.pdf",
+        "kb": 210
+      },
+      {
+        "project": "ltc-application",
+        "file": "birth_certificate_scan.pdf",
+        "kb": 340
+      }
+    ],
+    "files": [
+      {
+        "name": "LTC_application_checklist_v3.pdf",
+        "project": "ltc-application",
+        "clue": "name",
+        "kb": 180,
+        "topic": ""
+      },
+      {
+        "name": "Medicaid_LTC_bank_stmts_Aug2026.pdf",
+        "project": "ltc-application",
+        "clue": "name",
+        "kb": 420,
+        "topic": ""
+      },
+      {
+        "name": "ltc_application_cover_letter.docx",
+        "project": "ltc-application",
+        "clue": "name",
+        "kb": 30,
+        "topic": ""
+      },
+      {
+        "name": "agency_rota_Nov2026.xlsx",
+        "project": "agency-rota",
+        "clue": "name",
+        "kb": 45,
+        "topic": ""
+      },
+      {
+        "name": "BrightCare_aide_timesheet_wk42.pdf",
+        "project": "agency-rota",
+        "clue": "name",
+        "kb": 130,
+        "topic": ""
+      },
+      {
+        "name": "tuesday_circle_signup_sheet.docx",
+        "project": "tuesday-circle",
+        "clue": "name",
+        "kb": 38,
+        "topic": ""
+      },
+      {
+        "name": "circle_meeting_notes_oct14.txt",
+        "project": "tuesday-circle",
+        "clue": "name",
+        "kb": 4,
+        "topic": "tuesday-circle"
+      },
+      {
+        "name": "DurablePOA_draft_final (2).docx",
+        "project": "durable-poa",
+        "clue": "name",
+        "kb": 64,
+        "topic": ""
+      },
+      {
+        "name": "poa_notary_appt.txt",
+        "project": "durable-poa",
+        "clue": "name",
+        "kb": 2,
+        "topic": "durable-poa"
+      },
+      {
+        "name": "neurology_followup_questions.md",
+        "project": "neurology-followup",
+        "clue": "name",
+        "kb": 3,
+        "topic": "neurology-followup"
+      },
+      {
+        "name": "MoCA_scan_neuro_2026-09.pdf",
+        "project": "neurology-followup",
+        "clue": "name",
+        "kb": 310,
+        "topic": ""
+      },
+      {
+        "name": "bathroom_grab_bar_quote_v2.pdf",
+        "project": "bathroom-retrofit",
+        "clue": "name",
+        "kb": 95,
+        "topic": ""
+      },
+      {
+        "name": "IMG_4471_shower_measurements.HEIC",
+        "project": "bathroom-retrofit",
+        "clue": "name",
+        "kb": 850,
+        "topic": ""
+      },
+      {
+        "name": "bathroom_retrofit_budget.csv",
+        "project": "bathroom-retrofit",
+        "clue": "name",
+        "kb": 2,
+        "topic": "bathroom-retrofit"
+      },
+      {
+        "name": "notes_1.txt",
+        "project": "ltc-application",
+        "clue": "early",
+        "kb": 3,
+        "topic": "ltc-application"
+      },
+      {
+        "name": "draft.md",
+        "project": "agency-rota",
+        "clue": "early",
+        "kb": 5,
+        "topic": "agency-rota"
+      },
+      {
+        "name": "untitled.txt",
+        "project": "tuesday-circle",
+        "clue": "early",
+        "kb": 2,
+        "topic": "tuesday-circle"
+      },
+      {
+        "name": "todo_oct.txt",
+        "project": "durable-poa",
+        "clue": "early",
+        "kb": 3,
+        "topic": "durable-poa"
+      },
+      {
+        "name": "export_0921.csv",
+        "project": "neurology-followup",
+        "clue": "early",
+        "kb": 6,
+        "topic": "neurology-followup"
+      },
+      {
+        "name": "message.txt",
+        "project": "bathroom-retrofit",
+        "clue": "early",
+        "kb": 2,
+        "topic": "bathroom-retrofit"
+      },
+      {
+        "name": "scratch.md",
+        "project": "agency-rota",
+        "clue": "early",
+        "kb": 3,
+        "topic": "agency-rota"
+      },
+      {
+        "name": "notes (2).txt",
+        "project": "ltc-application",
+        "clue": "mid",
+        "kb": 8,
+        "topic": "ltc-application"
+      },
+      {
+        "name": "meeting.md",
+        "project": "tuesday-circle",
+        "clue": "mid",
+        "kb": 6,
+        "topic": "tuesday-circle"
+      },
+      {
+        "name": "copy_paste.txt",
+        "project": "neurology-followup",
+        "clue": "mid",
+        "kb": 5,
+        "topic": "neurology-followup"
+      },
+      {
+        "name": "email_thread.txt",
+        "project": "durable-poa",
+        "clue": "mid",
+        "kb": 10,
+        "topic": "durable-poa"
+      },
+      {
+        "name": "data.json",
+        "project": "agency-rota",
+        "clue": "mid",
+        "kb": 12,
+        "topic": "agency-rota"
+      },
+      {
+        "name": "doc1.txt",
+        "project": "bathroom-retrofit",
+        "clue": "mid",
+        "kb": 4,
+        "topic": "bathroom-retrofit"
+      },
+      {
+        "name": "reminders.py",
+        "project": "agency-rota",
+        "clue": "mid",
+        "kb": 3,
+        "topic": "agency-rota"
+      },
+      {
+        "name": "old_notes.txt",
+        "project": null,
+        "clue": "deep",
+        "kb": 18,
+        "topic": "ltc-application"
+      },
+      {
+        "name": "pasted.txt",
+        "project": null,
+        "clue": "deep",
+        "kb": 22,
+        "topic": "tuesday-circle"
+      },
+      {
+        "name": "journal_sept.md",
+        "project": null,
+        "clue": "deep",
+        "kb": 30,
+        "topic": "neurology-followup"
+      },
+      {
+        "name": "random.txt",
+        "project": null,
+        "clue": "deep",
+        "kb": 14,
+        "topic": "durable-poa"
+      },
+      {
+        "name": "backup_notes.md",
+        "project": null,
+        "clue": "deep",
+        "kb": 16,
+        "topic": "bathroom-retrofit"
+      },
+      {
+        "name": "inbox_export.json",
+        "project": null,
+        "clue": "deep",
+        "kb": 35,
+        "topic": "agency-rota"
+      },
+      {
+        "name": "IMG_2031.jpg",
+        "project": null,
+        "clue": "none",
+        "kb": 640,
+        "topic": ""
+      },
+      {
+        "name": "Screenshot 2026-10-03 at 9.14.22 PM.png",
+        "project": null,
+        "clue": "none",
+        "kb": 380,
+        "topic": ""
+      },
+      {
+        "name": "Zoom_installer.dmg",
+        "project": null,
+        "clue": "none",
+        "kb": 900,
+        "topic": ""
+      },
+      {
+        "name": "soft_foods_recipes.pdf",
+        "project": null,
+        "clue": "none",
+        "kb": 140,
+        "topic": ""
+      },
+      {
+        "name": "scan0007.pdf",
+        "project": null,
+        "clue": "none",
+        "kb": 220,
+        "topic": ""
+      },
+      {
+        "name": "grocery_list.txt",
+        "project": null,
+        "clue": "none",
+        "kb": 1,
+        "topic": ""
+      },
+      {
+        "name": "PXL_20261012_183355.jpg",
+        "project": null,
+        "clue": "none",
+        "kb": 720,
+        "topic": ""
+      },
+      {
+        "name": "library_ebook_receipt.pdf",
+        "project": null,
+        "clue": "none",
+        "kb": 40,
+        "topic": ""
+      },
+      {
+        "name": "wifi_router_manual.pdf",
+        "project": null,
+        "clue": "none",
+        "kb": 600,
+        "topic": ""
+      },
+      {
+        "name": "playlist_mom_favorites.txt",
+        "project": null,
+        "clue": "none",
+        "kb": 2,
+        "topic": ""
+      }
+    ]
+  },
+  "persona": "an adult child caring for a mother with dementia, coordinating home aide visits, Medicaid paperwork, and a caregiver support group"
+}

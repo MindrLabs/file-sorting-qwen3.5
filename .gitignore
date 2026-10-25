@@ -1,0 +1,5 @@
+.env
+.venv/
+__pycache__/
+# The folder you try it on (cp -R examples/sample-folder workspace); its .organizer/ journal goes with it.
+workspace/

@@ -1,0 +1,7 @@
+# sha256 of the plan shown at the first approval stop (UTF-8), one dev folder per line
+# server env: LLM_REPO=unsloth/Qwen3.5-9B-GGUF LLM_GGUF=Qwen3.5-9B-Q4_K_M.gguf LLM_N_CTX=8192 LLM_MAX_TOKENS=16384 LLM_PRESENCE_PENALTY=1.5 LLM_MIN_P=0
+# model revision 3885219b6810b007914f3a7950a8d1b469d598a5; Apple M2; model-compose 0.4.120
+e6d3fb76f774bc552193773bb4c031c5c8d43d72484fbea65f3a41fd26a1eeed  dev-01
+897e7f7234c0e6b9ae2a5b2f04d8c567a191d6fd7ff53285de536831de504246  dev-02
+bc991c62fdfb9b2c868fddc059a830249a64045df235f3ef844d6280e5cd1877  dev-03
+8a554b2b8861c14bf3b55465c6913d6904711867946fed09b6a61fb27fd4a698  dev-04

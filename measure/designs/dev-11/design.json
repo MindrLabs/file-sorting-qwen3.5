@@ -1,0 +1,342 @@
+{
+  "number": 24,
+  "language": "ko",
+  "attempts": 1,
+  "models": [
+    "claude-opus-5-5"
+  ],
+  "redraw_kinds": {},
+  "design": {
+    "projects": [
+      {
+        "name": "노조-견습-지원",
+        "clue": "배관용접 노조 지부 견습 지원서 마감은 11월 15일, 추천서 2부와 성적증명서 사본을 반드시 첨부할 것."
+      },
+      {
+        "name": "포트폴리오-사진",
+        "clue": "포트폴리오 3번 항목: 6G 파이프 루트패스 사진, 비드 근접샷이랑 굽힘시험 결과 사진을 같이 넣기."
+      },
+      {
+        "name": "자격증-시험-준비",
+        "clue": "AWS D1.1 3G/4G 판재 실기시험은 11월 8일, 3/8인치 판에 E7018 봉 사용, 굽힘시험으로 합격 판정."
+      },
+      {
+        "name": "트레일러-제작",
+        "clue": "졸업작품 유틸리티 트레일러 프레임: 2x3 각관 11게이지, 전체 길이 3m, 액슬은 앞에서 60% 위치."
+      },
+      {
+        "name": "장학금-신청",
+        "clue": "지역 건설협회 기술직 장학금 에세이 주제: 왜 용접을 선택했는지 500단어 이내로 작성, 12월 1일 마감."
+      }
+    ],
+    "existing": [
+      {
+        "project": "노조-견습-지원",
+        "file": "추천서_요청_이메일.txt",
+        "kb": 3
+      },
+      {
+        "project": "포트폴리오-사진",
+        "file": "6G_루트패스_01.jpg",
+        "kb": 410
+      }
+    ],
+    "files": [
+      {
+        "name": "노조견습_지원서_작성중_v3.docx",
+        "project": "노조-견습-지원",
+        "clue": "name",
+        "kb": 85,
+        "topic": ""
+      },
+      {
+        "name": "견습면접_예상질문.md",
+        "project": "노조-견습-지원",
+        "clue": "name",
+        "kb": 6,
+        "topic": "노조-견습-지원"
+      },
+      {
+        "name": "견습지원_성적증명서_스캔_20261012.pdf",
+        "project": "노조-견습-지원",
+        "clue": "name",
+        "kb": 410,
+        "topic": ""
+      },
+      {
+        "name": "포트폴리오_최종 (2).pdf",
+        "project": "포트폴리오-사진",
+        "clue": "name",
+        "kb": 880,
+        "topic": ""
+      },
+      {
+        "name": "포트폴리오_필렛용접_IMG_4471.heic",
+        "project": "포트폴리오-사진",
+        "clue": "name",
+        "kb": 640,
+        "topic": ""
+      },
+      {
+        "name": "포트폴리오_목차.txt",
+        "project": "포트폴리오-사진",
+        "clue": "name",
+        "kb": 2,
+        "topic": "포트폴리오-사진"
+      },
+      {
+        "name": "AWS_D1.1_기출문제_정리.pdf",
+        "project": "자격증-시험-준비",
+        "clue": "name",
+        "kb": 320,
+        "topic": ""
+      },
+      {
+        "name": "용접기호_암기카드_자격시험.csv",
+        "project": "자격증-시험-준비",
+        "clue": "name",
+        "kb": 5,
+        "topic": "자격증-시험-준비"
+      },
+      {
+        "name": "트레일러_프레임_도면_rev2.pdf",
+        "project": "트레일러-제작",
+        "clue": "name",
+        "kb": 540,
+        "topic": ""
+      },
+      {
+        "name": "트레일러_자재견적_2026-10.xlsx",
+        "project": "트레일러-제작",
+        "clue": "name",
+        "kb": 48,
+        "topic": ""
+      },
+      {
+        "name": "트레일러_절단리스트.csv",
+        "project": "트레일러-제작",
+        "clue": "name",
+        "kb": 3,
+        "topic": "트레일러-제작"
+      },
+      {
+        "name": "장학금_에세이_초안_final.docx",
+        "project": "장학금-신청",
+        "clue": "name",
+        "kb": 42,
+        "topic": ""
+      },
+      {
+        "name": "건설협회_장학금_신청서_스캔.pdf",
+        "project": "장학금-신청",
+        "clue": "name",
+        "kb": 760,
+        "topic": ""
+      },
+      {
+        "name": "메모_1014.txt",
+        "project": "노조-견습-지원",
+        "clue": "early",
+        "kb": 3,
+        "topic": "노조-견습-지원"
+      },
+      {
+        "name": "할일.md",
+        "project": "노조-견습-지원",
+        "clue": "mid",
+        "kb": 4,
+        "topic": "노조-견습-지원"
+      },
+      {
+        "name": "받은메일_정리.txt",
+        "project": "노조-견습-지원",
+        "clue": "mid",
+        "kb": 7,
+        "topic": "노조-견습-지원"
+      },
+      {
+        "name": "notes.txt",
+        "project": "포트폴리오-사진",
+        "clue": "early",
+        "kb": 2,
+        "topic": "포트폴리오-사진"
+      },
+      {
+        "name": "사진설명_초안.md",
+        "project": "포트폴리오-사진",
+        "clue": "mid",
+        "kb": 5,
+        "topic": "포트폴리오-사진"
+      },
+      {
+        "name": "공부노트.md",
+        "project": "자격증-시험-준비",
+        "clue": "early",
+        "kb": 8,
+        "topic": "자격증-시험-준비"
+      },
+      {
+        "name": "실기연습기록.csv",
+        "project": "자격증-시험-준비",
+        "clue": "mid",
+        "kb": 6,
+        "topic": "자격증-시험-준비"
+      },
+      {
+        "name": "질문목록.txt",
+        "project": "자격증-시험-준비",
+        "clue": "mid",
+        "kb": 3,
+        "topic": "자격증-시험-준비"
+      },
+      {
+        "name": "calc.py",
+        "project": "트레일러-제작",
+        "clue": "early",
+        "kb": 4,
+        "topic": "트레일러-제작"
+      },
+      {
+        "name": "용접순서.txt",
+        "project": "트레일러-제작",
+        "clue": "mid",
+        "kb": 3,
+        "topic": "트레일러-제작"
+      },
+      {
+        "name": "계획.json",
+        "project": "트레일러-제작",
+        "clue": "early",
+        "kb": 2,
+        "topic": "트레일러-제작"
+      },
+      {
+        "name": "초안.txt",
+        "project": "장학금-신청",
+        "clue": "early",
+        "kb": 4,
+        "topic": "장학금-신청"
+      },
+      {
+        "name": "무제 문서.md",
+        "project": "장학금-신청",
+        "clue": "mid",
+        "kb": 5,
+        "topic": "장학금-신청"
+      },
+      {
+        "name": "수업필기_전체.md",
+        "project": null,
+        "clue": "deep",
+        "kb": 24,
+        "topic": "자격증-시험-준비"
+      },
+      {
+        "name": "카톡_내보내기_20261003.txt",
+        "project": null,
+        "clue": "deep",
+        "kb": 38,
+        "topic": "노조-견습-지원"
+      },
+      {
+        "name": "일기_10월.txt",
+        "project": null,
+        "clue": "deep",
+        "kb": 12,
+        "topic": "장학금-신청"
+      },
+      {
+        "name": "data_export.json",
+        "project": null,
+        "clue": "deep",
+        "kb": 18,
+        "topic": "트레일러-제작"
+      },
+      {
+        "name": "메모장_백업.txt",
+        "project": null,
+        "clue": "deep",
+        "kb": 15,
+        "topic": "포트폴리오-사진"
+      },
+      {
+        "name": "KakaoTalk_20261005_183012.jpg",
+        "project": null,
+        "clue": "none",
+        "kb": 210,
+        "topic": ""
+      },
+      {
+        "name": "Lincoln_Power_MIG_210_매뉴얼.pdf",
+        "project": null,
+        "clue": "none",
+        "kb": 890,
+        "topic": ""
+      },
+      {
+        "name": "화면 캡처 2026-10-09 오후 3.12.png",
+        "project": null,
+        "clue": "none",
+        "kb": 180,
+        "topic": ""
+      },
+      {
+        "name": "시간표_2026가을.png",
+        "project": null,
+        "clue": "none",
+        "kb": 150,
+        "topic": ""
+      },
+      {
+        "name": "영수증_스캔0003.pdf",
+        "project": null,
+        "clue": "none",
+        "kb": 95,
+        "topic": ""
+      },
+      {
+        "name": "Zoom_installer.dmg",
+        "project": null,
+        "clue": "none",
+        "kb": 880,
+        "topic": ""
+      },
+      {
+        "name": "장보기.txt",
+        "project": null,
+        "clue": "none",
+        "kb": 1,
+        "topic": ""
+      },
+      {
+        "name": "IMG_2033.HEIC",
+        "project": null,
+        "clue": "none",
+        "kb": 520,
+        "topic": ""
+      },
+      {
+        "name": "사진모음.zip",
+        "project": null,
+        "clue": "none",
+        "kb": 850,
+        "topic": ""
+      },
+      {
+        "name": "운동루틴.md",
+        "project": null,
+        "clue": "none",
+        "kb": 2,
+        "topic": ""
+      },
+      {
+        "name": "자동차보험_갱신안내.pdf",
+        "project": null,
+        "clue": "none",
+        "kb": 130,
+        "topic": ""
+      }
+    ]
+  },
+  "persona": "a community college student in welding, building a project portfolio and applying for union apprenticeships"
+}

@@ -1,0 +1,352 @@
+{
+  "number": 12,
+  "language": "ko",
+  "attempts": 1,
+  "models": [
+    "claude-opus-5-5"
+  ],
+  "redraw_kinds": {},
+  "design": {
+    "projects": [
+      {
+        "name": "앱-리뉴얼",
+        "clue": "이번 스프린트에서 쇼핑앱 리뉴얼 홈 탭과 장바구니 플로우 시안을 확정하고, 11월 말 QA 전까지 개발팀에 핸드오프합니다."
+      },
+      {
+        "name": "디자인시스템-문서화",
+        "clue": "사내 디자인 시스템 '모아DS'의 버튼·인풋 컴포넌트 사용 가이드와 토큰 명명 규칙을 노션 문서로 정리해 주세요."
+      },
+      {
+        "name": "이직-포트폴리오",
+        "clue": "이직용 포트폴리오에는 케이스 스터디 3개를 넣고, 프로젝트마다 문제 정의–리서치–결과 지표 순서로 구성하자."
+      },
+      {
+        "name": "ux-스터디",
+        "clue": "격주 목요일 사내 UX 스터디, 이번 회차 발제는 『사용자 경험 측정』 4장이고 다음 발제자는 사다리타기로 정합니다."
+      }
+    ],
+    "existing": [
+      {
+        "project": "앱-리뉴얼",
+        "file": "리뉴얼_IA_v1.pdf",
+        "kb": 300
+      },
+      {
+        "project": "이직-포트폴리오",
+        "file": "포트폴리오_레퍼런스.md",
+        "kb": 5
+      }
+    ],
+    "files": [
+      {
+        "name": "앱리뉴얼_홈탭_시안_v3.png",
+        "project": "앱-리뉴얼",
+        "clue": "name",
+        "kb": 640,
+        "topic": ""
+      },
+      {
+        "name": "앱리뉴얼_장바구니플로우_final (2).pdf",
+        "project": "앱-리뉴얼",
+        "clue": "name",
+        "kb": 820,
+        "topic": ""
+      },
+      {
+        "name": "리뉴얼_QA체크리스트_1104.xlsx",
+        "project": "앱-리뉴얼",
+        "clue": "name",
+        "kb": 85,
+        "topic": ""
+      },
+      {
+        "name": "앱리뉴얼_회의록_1015.md",
+        "project": "앱-리뉴얼",
+        "clue": "name",
+        "kb": 6,
+        "topic": "앱-리뉴얼"
+      },
+      {
+        "name": "모아DS_컴포넌트가이드_초안.docx",
+        "project": "디자인시스템-문서화",
+        "clue": "name",
+        "kb": 210,
+        "topic": ""
+      },
+      {
+        "name": "디자인토큰_명명규칙.md",
+        "project": "디자인시스템-문서화",
+        "clue": "name",
+        "kb": 9,
+        "topic": "디자인시스템-문서화"
+      },
+      {
+        "name": "모아DS_color_tokens.json",
+        "project": "디자인시스템-문서화",
+        "clue": "name",
+        "kb": 14,
+        "topic": "디자인시스템-문서화"
+      },
+      {
+        "name": "모아DS_아이콘세트_export.zip",
+        "project": "디자인시스템-문서화",
+        "clue": "name",
+        "kb": 760,
+        "topic": ""
+      },
+      {
+        "name": "포트폴리오_케이스스터디_v2.pdf",
+        "project": "이직-포트폴리오",
+        "clue": "name",
+        "kb": 880,
+        "topic": ""
+      },
+      {
+        "name": "포트폴리오_표지_목업.png",
+        "project": "이직-포트폴리오",
+        "clue": "name",
+        "kb": 450,
+        "topic": ""
+      },
+      {
+        "name": "이력서_2026_UX디자이너_수정.docx",
+        "project": "이직-포트폴리오",
+        "clue": "name",
+        "kb": 60,
+        "topic": ""
+      },
+      {
+        "name": "포트폴리오_목차.txt",
+        "project": "이직-포트폴리오",
+        "clue": "name",
+        "kb": 3,
+        "topic": "이직-포트폴리오"
+      },
+      {
+        "name": "UX스터디_발제_4장.pdf",
+        "project": "ux-스터디",
+        "clue": "name",
+        "kb": 340,
+        "topic": ""
+      },
+      {
+        "name": "ux스터디_출석부.csv",
+        "project": "ux-스터디",
+        "clue": "name",
+        "kb": 2,
+        "topic": "ux-스터디"
+      },
+      {
+        "name": "메모_1017.txt",
+        "project": "앱-리뉴얼",
+        "clue": "early",
+        "kb": 3,
+        "topic": "앱-리뉴얼"
+      },
+      {
+        "name": "notes_draft.md",
+        "project": "앱-리뉴얼",
+        "clue": "early",
+        "kb": 6,
+        "topic": "앱-리뉴얼"
+      },
+      {
+        "name": "정리.md",
+        "project": "디자인시스템-문서화",
+        "clue": "early",
+        "kb": 5,
+        "topic": "디자인시스템-문서화"
+      },
+      {
+        "name": "문서구조안.md",
+        "project": "디자인시스템-문서화",
+        "clue": "early",
+        "kb": 7,
+        "topic": "디자인시스템-문서화"
+      },
+      {
+        "name": "todo.txt",
+        "project": "이직-포트폴리오",
+        "clue": "early",
+        "kb": 2,
+        "topic": "이직-포트폴리오"
+      },
+      {
+        "name": "초안_0920.txt",
+        "project": "이직-포트폴리오",
+        "clue": "early",
+        "kb": 4,
+        "topic": "이직-포트폴리오"
+      },
+      {
+        "name": "회의메모.md",
+        "project": "ux-스터디",
+        "clue": "early",
+        "kb": 4,
+        "topic": "ux-스터디"
+      },
+      {
+        "name": "요청사항_정리.txt",
+        "project": "앱-리뉴얼",
+        "clue": "mid",
+        "kb": 8,
+        "topic": "앱-리뉴얼"
+      },
+      {
+        "name": "export_data.csv",
+        "project": "앱-리뉴얼",
+        "clue": "mid",
+        "kb": 12,
+        "topic": "앱-리뉴얼"
+      },
+      {
+        "name": "피드백모음.md",
+        "project": "디자인시스템-문서화",
+        "clue": "mid",
+        "kb": 10,
+        "topic": "디자인시스템-문서화"
+      },
+      {
+        "name": "체크리스트.md",
+        "project": "디자인시스템-문서화",
+        "clue": "mid",
+        "kb": 5,
+        "topic": "디자인시스템-문서화"
+      },
+      {
+        "name": "작업일지_10월.md",
+        "project": "이직-포트폴리오",
+        "clue": "mid",
+        "kb": 15,
+        "topic": "이직-포트폴리오"
+      },
+      {
+        "name": "링크모음.txt",
+        "project": "이직-포트폴리오",
+        "clue": "mid",
+        "kb": 4,
+        "topic": "이직-포트폴리오"
+      },
+      {
+        "name": "untitled.txt",
+        "project": "ux-스터디",
+        "clue": "mid",
+        "kb": 3,
+        "topic": "ux-스터디"
+      },
+      {
+        "name": "주간보고_모음.md",
+        "project": null,
+        "clue": "deep",
+        "kb": 22,
+        "topic": "앱-리뉴얼"
+      },
+      {
+        "name": "data_dump.json",
+        "project": null,
+        "clue": "deep",
+        "kb": 28,
+        "topic": "앱-리뉴얼"
+      },
+      {
+        "name": "슬랙백업_1008.txt",
+        "project": null,
+        "clue": "deep",
+        "kb": 35,
+        "topic": "디자인시스템-문서화"
+      },
+      {
+        "name": "script_rename.py",
+        "project": null,
+        "clue": "deep",
+        "kb": 6,
+        "topic": "디자인시스템-문서화"
+      },
+      {
+        "name": "메모장_백업.txt",
+        "project": null,
+        "clue": "deep",
+        "kb": 18,
+        "topic": "이직-포트폴리오"
+      },
+      {
+        "name": "읽을거리.md",
+        "project": null,
+        "clue": "deep",
+        "kb": 12,
+        "topic": "ux-스터디"
+      },
+      {
+        "name": "IMG_4821.HEIC",
+        "project": null,
+        "clue": "none",
+        "kb": 310,
+        "topic": ""
+      },
+      {
+        "name": "KakaoTalk_20261012_183022.jpg",
+        "project": null,
+        "clue": "none",
+        "kb": 180,
+        "topic": ""
+      },
+      {
+        "name": "스캔_20260930.pdf",
+        "project": null,
+        "clue": "none",
+        "kb": 420,
+        "topic": ""
+      },
+      {
+        "name": "Figma-126.0.dmg",
+        "project": null,
+        "clue": "none",
+        "kb": 890,
+        "topic": ""
+      },
+      {
+        "name": "연말정산_간소화자료.pdf",
+        "project": null,
+        "clue": "none",
+        "kb": 260,
+        "topic": ""
+      },
+      {
+        "name": "Screenshot 2026-10-14 at 11.32.07.png",
+        "project": null,
+        "clue": "none",
+        "kb": 520,
+        "topic": ""
+      },
+      {
+        "name": "가계부_2026.xlsx",
+        "project": null,
+        "clue": "none",
+        "kb": 45,
+        "topic": ""
+      },
+      {
+        "name": "청첩장_모바일.jpg",
+        "project": null,
+        "clue": "none",
+        "kb": 230,
+        "topic": ""
+      },
+      {
+        "name": "requirements.txt",
+        "project": null,
+        "clue": "none",
+        "kb": 1,
+        "topic": ""
+      },
+      {
+        "name": "영수증_스캔 (1).pdf",
+        "project": null,
+        "clue": "none",
+        "kb": 95,
+        "topic": ""
+      }
+    ]
+  },
+  "persona": "판교 IT 회사의 UX 디자이너: 앱 리뉴얼 프로젝트와 사내 디자인 시스템 문서화, 이직용 포트폴리오를 준비한다"
+}

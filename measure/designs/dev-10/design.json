@@ -1,0 +1,377 @@
+{
+  "number": 17,
+  "language": "en",
+  "attempts": 1,
+  "models": [
+    "claude-opus-5-5"
+  ],
+  "redraw_kinds": {},
+  "design": {
+    "projects": [
+      {
+        "name": "credential-evaluation",
+        "clue": "ECE still hasn't received my UFMG transcripts; FPGEC says the course-by-course report must be sent directly by the evaluator, not by me."
+      },
+      {
+        "name": "fpgee-study",
+        "clue": "FPGEE practice block 6: 68% on pharmacokinetics, redo the clearance and half-life questions before the March sitting."
+      },
+      {
+        "name": "citizenship-interview",
+        "clue": "N-400 interview at the USCIS field office: review the 100 civics questions and bring the green card, both passports and the appointment notice."
+      },
+      {
+        "name": "school-enrollment",
+        "clue": "Registration for Lucas (3rd grade) and Beatriz (kindergarten) needs proof of residency, immunization records and the home language survey."
+      },
+      {
+        "name": "toefl-prep",
+        "clue": "TOEFL iBT target for FPGEC is 102 total with at least 26 in speaking, so practice the integrated speaking tasks every morning."
+      }
+    ],
+    "existing": [
+      {
+        "project": "credential-evaluation",
+        "file": "FPGEC_eligibility_checklist.pdf",
+        "kb": 95
+      },
+      {
+        "project": "school-enrollment",
+        "file": "district_enrollment_confirmation_Lucas.pdf",
+        "kb": 70
+      }
+    ],
+    "files": [
+      {
+        "name": "FPGEC_application_receipt_2026.pdf",
+        "project": "credential-evaluation",
+        "clue": "name",
+        "kb": 180,
+        "topic": ""
+      },
+      {
+        "name": "ECE_course_by_course_request_form final (2).pdf",
+        "project": "credential-evaluation",
+        "clue": "name",
+        "kb": 240,
+        "topic": ""
+      },
+      {
+        "name": "diploma_farmacia_UFMG_scan.jpg",
+        "project": "credential-evaluation",
+        "clue": "name",
+        "kb": 650,
+        "topic": ""
+      },
+      {
+        "name": "FPGEE_practice_exam_6_results.pdf",
+        "project": "fpgee-study",
+        "clue": "name",
+        "kb": 210,
+        "topic": ""
+      },
+      {
+        "name": "fpgee_pharmacokinetics_formulas.md",
+        "project": "fpgee-study",
+        "clue": "name",
+        "kb": 9,
+        "topic": "fpgee-study"
+      },
+      {
+        "name": "N-400_appointment_notice_USCIS.pdf",
+        "project": "citizenship-interview",
+        "clue": "name",
+        "kb": 140,
+        "topic": ""
+      },
+      {
+        "name": "civics_100_questions_flashcards.csv",
+        "project": "citizenship-interview",
+        "clue": "name",
+        "kb": 14,
+        "topic": "citizenship-interview"
+      },
+      {
+        "name": "citizenship_reading_writing_vocab.txt",
+        "project": "citizenship-interview",
+        "clue": "name",
+        "kb": 4,
+        "topic": "citizenship-interview"
+      },
+      {
+        "name": "Lucas_immunization_record_2026.pdf",
+        "project": "school-enrollment",
+        "clue": "name",
+        "kb": 160,
+        "topic": ""
+      },
+      {
+        "name": "Beatriz_kindergarten_registration_v2.docx",
+        "project": "school-enrollment",
+        "clue": "name",
+        "kb": 85,
+        "topic": ""
+      },
+      {
+        "name": "proof_of_residency_lease_for_school.pdf",
+        "project": "school-enrollment",
+        "clue": "name",
+        "kb": 300,
+        "topic": ""
+      },
+      {
+        "name": "school_supply_list_3rd_grade.txt",
+        "project": "school-enrollment",
+        "clue": "name",
+        "kb": 2,
+        "topic": "school-enrollment"
+      },
+      {
+        "name": "TOEFL_iBT_score_report_Aug2026.pdf",
+        "project": "toefl-prep",
+        "clue": "name",
+        "kb": 120,
+        "topic": ""
+      },
+      {
+        "name": "toefl_speaking_task_notes.txt",
+        "project": "toefl-prep",
+        "clue": "name",
+        "kb": 6,
+        "topic": "toefl-prep"
+      },
+      {
+        "name": "TOEFL_writing_templates_final.docx",
+        "project": "toefl-prep",
+        "clue": "name",
+        "kb": 48,
+        "topic": ""
+      },
+      {
+        "name": "notes_oct.txt",
+        "project": "credential-evaluation",
+        "clue": "early",
+        "kb": 3,
+        "topic": "credential-evaluation"
+      },
+      {
+        "name": "draft_email.txt",
+        "project": "credential-evaluation",
+        "clue": "early",
+        "kb": 2,
+        "topic": "credential-evaluation"
+      },
+      {
+        "name": "study_plan_v3.md",
+        "project": "fpgee-study",
+        "clue": "early",
+        "kb": 5,
+        "topic": "fpgee-study"
+      },
+      {
+        "name": "week_plan.csv",
+        "project": "fpgee-study",
+        "clue": "early",
+        "kb": 4,
+        "topic": "fpgee-study"
+      },
+      {
+        "name": "untitled.txt",
+        "project": "citizenship-interview",
+        "clue": "early",
+        "kb": 1,
+        "topic": "citizenship-interview"
+      },
+      {
+        "name": "todo.md",
+        "project": "school-enrollment",
+        "clue": "early",
+        "kb": 2,
+        "topic": "school-enrollment"
+      },
+      {
+        "name": "checklist.md",
+        "project": "school-enrollment",
+        "clue": "early",
+        "kb": 3,
+        "topic": "school-enrollment"
+      },
+      {
+        "name": "morning_routine.txt",
+        "project": "toefl-prep",
+        "clue": "early",
+        "kb": 2,
+        "topic": "toefl-prep"
+      },
+      {
+        "name": "export_2026-09-14.json",
+        "project": "credential-evaluation",
+        "clue": "mid",
+        "kb": 12,
+        "topic": "credential-evaluation"
+      },
+      {
+        "name": "log.csv",
+        "project": "fpgee-study",
+        "clue": "mid",
+        "kb": 18,
+        "topic": "fpgee-study"
+      },
+      {
+        "name": "scratch.md",
+        "project": "citizenship-interview",
+        "clue": "mid",
+        "kb": 7,
+        "topic": "citizenship-interview"
+      },
+      {
+        "name": "questions.txt",
+        "project": "citizenship-interview",
+        "clue": "mid",
+        "kb": 3,
+        "topic": "citizenship-interview"
+      },
+      {
+        "name": "meeting_notes.txt",
+        "project": "school-enrollment",
+        "clue": "mid",
+        "kb": 4,
+        "topic": "school-enrollment"
+      },
+      {
+        "name": "notes (1).txt",
+        "project": "toefl-prep",
+        "clue": "mid",
+        "kb": 5,
+        "topic": "toefl-prep"
+      },
+      {
+        "name": "data.csv",
+        "project": "toefl-prep",
+        "clue": "mid",
+        "kb": 9,
+        "topic": "toefl-prep"
+      },
+      {
+        "name": "notes_backup.txt",
+        "project": null,
+        "clue": "deep",
+        "kb": 22,
+        "topic": "credential-evaluation"
+      },
+      {
+        "name": "journal_2026.md",
+        "project": null,
+        "clue": "deep",
+        "kb": 30,
+        "topic": "citizenship-interview"
+      },
+      {
+        "name": "export.json",
+        "project": null,
+        "clue": "deep",
+        "kb": 16,
+        "topic": "school-enrollment"
+      },
+      {
+        "name": "analysis.py",
+        "project": null,
+        "clue": "deep",
+        "kb": 11,
+        "topic": "fpgee-study"
+      },
+      {
+        "name": "old_notes.txt",
+        "project": null,
+        "clue": "deep",
+        "kb": 14,
+        "topic": "toefl-prep"
+      },
+      {
+        "name": "family_budget_2026.csv",
+        "project": null,
+        "clue": "deep",
+        "kb": 25,
+        "topic": "school-enrollment"
+      },
+      {
+        "name": "IMG_4521.HEIC",
+        "project": null,
+        "clue": "none",
+        "kb": 780,
+        "topic": ""
+      },
+      {
+        "name": "IMG_20260912_183044.jpg",
+        "project": null,
+        "clue": "none",
+        "kb": 640,
+        "topic": ""
+      },
+      {
+        "name": "Screenshot 2026-10-03 at 21.14.07.png",
+        "project": null,
+        "clue": "none",
+        "kb": 310,
+        "topic": ""
+      },
+      {
+        "name": "WhatsApp_Installer.dmg",
+        "project": null,
+        "clue": "none",
+        "kb": 880,
+        "topic": ""
+      },
+      {
+        "name": "photos_from_sao_paulo.zip",
+        "project": null,
+        "clue": "none",
+        "kb": 870,
+        "topic": ""
+      },
+      {
+        "name": "car_insurance_quote_Progressive.pdf",
+        "project": null,
+        "clue": "none",
+        "kb": 190,
+        "topic": ""
+      },
+      {
+        "name": "invoice_43021.pdf",
+        "project": null,
+        "clue": "none",
+        "kb": 60,
+        "topic": ""
+      },
+      {
+        "name": "Scan_0017.pdf",
+        "project": null,
+        "clue": "none",
+        "kb": 420,
+        "topic": ""
+      },
+      {
+        "name": "feijoada_recipe.txt",
+        "project": null,
+        "clue": "none",
+        "kb": 3,
+        "topic": ""
+      },
+      {
+        "name": "wifi_password.txt",
+        "project": null,
+        "clue": "none",
+        "kb": 1,
+        "topic": ""
+      },
+      {
+        "name": "grocery_list.md",
+        "project": null,
+        "clue": "none",
+        "kb": 1,
+        "topic": ""
+      }
+    ]
+  },
+  "persona": "a pharmacist who immigrated from Brazil, getting credentials recognized, studying for the citizenship test, and enrolling kids in school"
+}

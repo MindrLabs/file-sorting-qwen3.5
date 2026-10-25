@@ -1,0 +1,326 @@
+{
+  "number": 2,
+  "language": "en",
+  "attempts": 3,
+  "models": [
+    "claude-opus-5-5"
+  ],
+  "redraw_kinds": {
+    "leak": 3
+  },
+  "design": {
+    "projects": [
+      {
+        "name": "survivor-pension",
+        "clue": "The benefits office says my claim stays pending until they receive the certified death certificate and our 1979 marriage certificate."
+      },
+      {
+        "name": "maple-street-sale",
+        "clue": "Agent wants the porch painted and the back bedroom emptied before the open house on November 2nd."
+      },
+      {
+        "name": "solo-cooking",
+        "clue": "Halve the recipe, freeze the extra portion in the small glass dishes, and write the date on the lid."
+      },
+      {
+        "name": "bank-closures",
+        "clue": "Credit union needs a letter of testamentary before they will move Walter's checking balance into my name."
+      }
+    ],
+    "existing": [
+      {
+        "project": "survivor-pension",
+        "file": "death_certificate_certified_copy.pdf",
+        "kb": 150
+      },
+      {
+        "project": "solo-cooking",
+        "file": "soup_for_one.md",
+        "kb": 2
+      }
+    ],
+    "files": [
+      {
+        "name": "SP-214_survivor_pension_application_scan.pdf",
+        "project": "survivor-pension",
+        "clue": "name",
+        "kb": 420,
+        "topic": ""
+      },
+      {
+        "name": "survivor_pension_checklist.md",
+        "project": "survivor-pension",
+        "clue": "name",
+        "kb": 3,
+        "topic": "survivor-pension"
+      },
+      {
+        "name": "survivor_pension_award_letter_scan.pdf",
+        "project": "survivor-pension",
+        "clue": "name",
+        "kb": 310,
+        "topic": ""
+      },
+      {
+        "name": "maple_street_appraisal_2026-09.pdf",
+        "project": "maple-street-sale",
+        "clue": "name",
+        "kb": 610,
+        "topic": ""
+      },
+      {
+        "name": "maple-street-staging-photos.zip",
+        "project": "maple-street-sale",
+        "clue": "name",
+        "kb": 880,
+        "topic": ""
+      },
+      {
+        "name": "maple_street_repairs_quote_final (2).docx",
+        "project": "maple-street-sale",
+        "clue": "name",
+        "kb": 85,
+        "topic": ""
+      },
+      {
+        "name": "maple_street_front_IMG_4412.heic",
+        "project": "maple-street-sale",
+        "clue": "name",
+        "kb": 850,
+        "topic": ""
+      },
+      {
+        "name": "solo_cooking_meal_plan_week3.md",
+        "project": "solo-cooking",
+        "clue": "name",
+        "kb": 4,
+        "topic": "solo-cooking"
+      },
+      {
+        "name": "solo-cooking-grocery-list.txt",
+        "project": "solo-cooking",
+        "clue": "name",
+        "kb": 1,
+        "topic": "solo-cooking"
+      },
+      {
+        "name": "solo_cooking_freezer_inventory.csv",
+        "project": "solo-cooking",
+        "clue": "name",
+        "kb": 2,
+        "topic": "solo-cooking"
+      },
+      {
+        "name": "bank_closures_tracker.xlsx",
+        "project": "bank-closures",
+        "clue": "name",
+        "kb": 48,
+        "topic": ""
+      },
+      {
+        "name": "bank-closures-letter-template.docx",
+        "project": "bank-closures",
+        "clue": "name",
+        "kb": 36,
+        "topic": ""
+      },
+      {
+        "name": "bank_closures_notes.txt",
+        "project": "bank-closures",
+        "clue": "name",
+        "kb": 3,
+        "topic": "bank-closures"
+      },
+      {
+        "name": "notes_oct.txt",
+        "project": "survivor-pension",
+        "clue": "early",
+        "kb": 2,
+        "topic": "survivor-pension"
+      },
+      {
+        "name": "scratch.txt",
+        "project": "survivor-pension",
+        "clue": "early",
+        "kb": 1,
+        "topic": "survivor-pension"
+      },
+      {
+        "name": "draft_v2.md",
+        "project": "maple-street-sale",
+        "clue": "early",
+        "kb": 3,
+        "topic": "maple-street-sale"
+      },
+      {
+        "name": "untitled.md",
+        "project": "maple-street-sale",
+        "clue": "early",
+        "kb": 1,
+        "topic": "maple-street-sale"
+      },
+      {
+        "name": "todo.txt",
+        "project": "solo-cooking",
+        "clue": "early",
+        "kb": 1,
+        "topic": "solo-cooking"
+      },
+      {
+        "name": "ideas.txt",
+        "project": "solo-cooking",
+        "clue": "early",
+        "kb": 2,
+        "topic": "solo-cooking"
+      },
+      {
+        "name": "call_log.txt",
+        "project": "bank-closures",
+        "clue": "early",
+        "kb": 2,
+        "topic": "bank-closures"
+      },
+      {
+        "name": "export_0912.csv",
+        "project": "survivor-pension",
+        "clue": "mid",
+        "kb": 12,
+        "topic": "survivor-pension"
+      },
+      {
+        "name": "reply.md",
+        "project": "survivor-pension",
+        "clue": "mid",
+        "kb": 4,
+        "topic": "survivor-pension"
+      },
+      {
+        "name": "Notes 2026-10-03.md",
+        "project": "maple-street-sale",
+        "clue": "mid",
+        "kb": 8,
+        "topic": "maple-street-sale"
+      },
+      {
+        "name": "misc.txt",
+        "project": "solo-cooking",
+        "clue": "mid",
+        "kb": 5,
+        "topic": "solo-cooking"
+      },
+      {
+        "name": "email_draft_final.txt",
+        "project": "bank-closures",
+        "clue": "mid",
+        "kb": 6,
+        "topic": "bank-closures"
+      },
+      {
+        "name": "list_v3.txt",
+        "project": "bank-closures",
+        "clue": "mid",
+        "kb": 3,
+        "topic": "bank-closures"
+      },
+      {
+        "name": "journal_2026.md",
+        "project": null,
+        "clue": "deep",
+        "kb": 22,
+        "topic": "survivor-pension"
+      },
+      {
+        "name": "letters_to_kids.txt",
+        "project": null,
+        "clue": "deep",
+        "kb": 14,
+        "topic": "maple-street-sale"
+      },
+      {
+        "name": "clipboard.txt",
+        "project": null,
+        "clue": "deep",
+        "kb": 9,
+        "topic": "maple-street-sale"
+      },
+      {
+        "name": "old_notes_backup.txt",
+        "project": null,
+        "clue": "deep",
+        "kb": 18,
+        "topic": "solo-cooking"
+      },
+      {
+        "name": "phone_notes_export.txt",
+        "project": null,
+        "clue": "deep",
+        "kb": 30,
+        "topic": "bank-closures"
+      },
+      {
+        "name": "IMG_2231.jpg",
+        "project": null,
+        "clue": "none",
+        "kb": 540,
+        "topic": ""
+      },
+      {
+        "name": "Scan_0004.pdf",
+        "project": null,
+        "clue": "none",
+        "kb": 260,
+        "topic": ""
+      },
+      {
+        "name": "grandkids_birthday_card.png",
+        "project": null,
+        "clue": "none",
+        "kb": 410,
+        "topic": ""
+      },
+      {
+        "name": "Zoom_Installer.dmg",
+        "project": null,
+        "clue": "none",
+        "kb": 880,
+        "topic": ""
+      },
+      {
+        "name": "crossword_answers.txt",
+        "project": null,
+        "clue": "none",
+        "kb": 2,
+        "topic": ""
+      },
+      {
+        "name": "church_bulletin_oct.pdf",
+        "project": null,
+        "clue": "none",
+        "kb": 190,
+        "topic": ""
+      },
+      {
+        "name": "Screenshot 2026-10-14 at 9.41.22.png",
+        "project": null,
+        "clue": "none",
+        "kb": 320,
+        "topic": ""
+      },
+      {
+        "name": "weather_widget.json",
+        "project": null,
+        "clue": "none",
+        "kb": 1,
+        "topic": ""
+      },
+      {
+        "name": "hymn_list.docx",
+        "project": null,
+        "clue": "none",
+        "kb": 30,
+        "topic": ""
+      }
+    ]
+  },
+  "persona": "a recently widowed retiree sorting out survivor pension benefits, preparing the family house for sale, and learning to cook for one"
+}

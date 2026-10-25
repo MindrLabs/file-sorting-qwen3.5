@@ -1,0 +1,359 @@
+{
+  "number": 7,
+  "language": "en",
+  "attempts": 1,
+  "models": [
+    "claude-opus-5-5"
+  ],
+  "redraw_kinds": {},
+  "design": {
+    "projects": [
+      {
+        "name": "portfolio-refresh",
+        "clue": "Swap the Hallmark checkout case study to the top of the portfolio grid and add the before/after load times."
+      },
+      {
+        "name": "unemployment-claims",
+        "clue": "Weekly certification for week ending Oct 17: reported 3 work search contacts, no earnings, claim ID UI-4471-0928."
+      },
+      {
+        "name": "garage-homebrew",
+        "clue": "Garage brew corner: mount the wort chiller hook left of the utility sink and run the 20A outlet for the kettle."
+      },
+      {
+        "name": "job-applications",
+        "clue": "Following up on the Senior Backend Contractor role at Larkspur Analytics — happy to share my portfolio link if helpful."
+      }
+    ],
+    "existing": [
+      {
+        "project": "portfolio-refresh",
+        "file": "about_me_draft.md",
+        "kb": 3
+      },
+      {
+        "project": "unemployment-claims",
+        "file": "claim_confirmation_UI-4471.pdf",
+        "kb": 110
+      }
+    ],
+    "files": [
+      {
+        "name": "portfolio_case_study_checkout_v3.md",
+        "project": "portfolio-refresh",
+        "clue": "name",
+        "kb": 6,
+        "topic": "portfolio-refresh"
+      },
+      {
+        "name": "Portfolio_Resume_2026_final (2).pdf",
+        "project": "portfolio-refresh",
+        "clue": "name",
+        "kb": 180,
+        "topic": ""
+      },
+      {
+        "name": "portfolio-hero-screenshot@2x.png",
+        "project": "portfolio-refresh",
+        "clue": "name",
+        "kb": 640,
+        "topic": ""
+      },
+      {
+        "name": "portfolio_site_export_2026-10-12.zip",
+        "project": "portfolio-refresh",
+        "clue": "name",
+        "kb": 880,
+        "topic": ""
+      },
+      {
+        "name": "UI_claim_determination_letter_scan.pdf",
+        "project": "unemployment-claims",
+        "clue": "name",
+        "kb": 320,
+        "topic": ""
+      },
+      {
+        "name": "weekly_certification_log_oct.csv",
+        "project": "unemployment-claims",
+        "clue": "name",
+        "kb": 3,
+        "topic": "unemployment-claims"
+      },
+      {
+        "name": "unemployment_work_search_record.xlsx",
+        "project": "unemployment-claims",
+        "clue": "name",
+        "kb": 45,
+        "topic": ""
+      },
+      {
+        "name": "separation_notice_Meridian_Contracting.pdf",
+        "project": "unemployment-claims",
+        "clue": "name",
+        "kb": 140,
+        "topic": ""
+      },
+      {
+        "name": "homebrew_corner_shopping_list.txt",
+        "project": "garage-homebrew",
+        "clue": "name",
+        "kb": 2,
+        "topic": "garage-homebrew"
+      },
+      {
+        "name": "garage_brew_shelf_IMG_4412.heic",
+        "project": "garage-homebrew",
+        "clue": "name",
+        "kb": 850,
+        "topic": ""
+      },
+      {
+        "name": "brew_kettle_manual_SS_20gal.pdf",
+        "project": "garage-homebrew",
+        "clue": "name",
+        "kb": 760,
+        "topic": ""
+      },
+      {
+        "name": "hefeweizen_recipe_batch1.md",
+        "project": "garage-homebrew",
+        "clue": "name",
+        "kb": 4,
+        "topic": "garage-homebrew"
+      },
+      {
+        "name": "cover_letter_larkspur_analytics_v2.docx",
+        "project": "job-applications",
+        "clue": "name",
+        "kb": 38,
+        "topic": ""
+      },
+      {
+        "name": "job_applications_tracker.xlsx",
+        "project": "job-applications",
+        "clue": "name",
+        "kb": 52,
+        "topic": ""
+      },
+      {
+        "name": "interview_prep_larkspur.md",
+        "project": "job-applications",
+        "clue": "name",
+        "kb": 5,
+        "topic": "job-applications"
+      },
+      {
+        "name": "notes.txt",
+        "project": "garage-homebrew",
+        "clue": "early",
+        "kb": 2,
+        "topic": "garage-homebrew"
+      },
+      {
+        "name": "todo.md",
+        "project": "portfolio-refresh",
+        "clue": "early",
+        "kb": 1,
+        "topic": "portfolio-refresh"
+      },
+      {
+        "name": "draft.txt",
+        "project": "job-applications",
+        "clue": "early",
+        "kb": 2,
+        "topic": "job-applications"
+      },
+      {
+        "name": "untitled.md",
+        "project": "unemployment-claims",
+        "clue": "early",
+        "kb": 1,
+        "topic": "unemployment-claims"
+      },
+      {
+        "name": "scratch.txt",
+        "project": "garage-homebrew",
+        "clue": "early",
+        "kb": 1,
+        "topic": "garage-homebrew"
+      },
+      {
+        "name": "followup.txt",
+        "project": "job-applications",
+        "clue": "early",
+        "kb": 1,
+        "topic": "job-applications"
+      },
+      {
+        "name": "notes (1).md",
+        "project": "portfolio-refresh",
+        "clue": "early",
+        "kb": 3,
+        "topic": "portfolio-refresh"
+      },
+      {
+        "name": "call_notes.txt",
+        "project": "unemployment-claims",
+        "clue": "early",
+        "kb": 2,
+        "topic": "unemployment-claims"
+      },
+      {
+        "name": "meeting_2026-10-14.md",
+        "project": "job-applications",
+        "clue": "mid",
+        "kb": 6,
+        "topic": "job-applications"
+      },
+      {
+        "name": "export.json",
+        "project": "portfolio-refresh",
+        "clue": "mid",
+        "kb": 12,
+        "topic": "portfolio-refresh"
+      },
+      {
+        "name": "list.csv",
+        "project": "garage-homebrew",
+        "clue": "mid",
+        "kb": 4,
+        "topic": "garage-homebrew"
+      },
+      {
+        "name": "transcript.txt",
+        "project": "unemployment-claims",
+        "clue": "mid",
+        "kb": 9,
+        "topic": "unemployment-claims"
+      },
+      {
+        "name": "README.md",
+        "project": "portfolio-refresh",
+        "clue": "mid",
+        "kb": 7,
+        "topic": "portfolio-refresh"
+      },
+      {
+        "name": "checklist.md",
+        "project": "garage-homebrew",
+        "clue": "mid",
+        "kb": 3,
+        "topic": "garage-homebrew"
+      },
+      {
+        "name": "chat_log.txt",
+        "project": "job-applications",
+        "clue": "mid",
+        "kb": 14,
+        "topic": "job-applications"
+      },
+      {
+        "name": "random_notes_2026.txt",
+        "project": null,
+        "clue": "deep",
+        "kb": 22,
+        "topic": "garage-homebrew"
+      },
+      {
+        "name": "journal.md",
+        "project": null,
+        "clue": "deep",
+        "kb": 30,
+        "topic": "unemployment-claims"
+      },
+      {
+        "name": "backup_notes.txt",
+        "project": null,
+        "clue": "deep",
+        "kb": 18,
+        "topic": "portfolio-refresh"
+      },
+      {
+        "name": "clipboard_dump.txt",
+        "project": null,
+        "clue": "deep",
+        "kb": 12,
+        "topic": "job-applications"
+      },
+      {
+        "name": "todo_old.md",
+        "project": null,
+        "clue": "deep",
+        "kb": 9,
+        "topic": "garage-homebrew"
+      },
+      {
+        "name": "misc.md",
+        "project": null,
+        "clue": "deep",
+        "kb": 15,
+        "topic": "portfolio-refresh"
+      },
+      {
+        "name": "IMG_2041.JPG",
+        "project": null,
+        "clue": "none",
+        "kb": 420,
+        "topic": ""
+      },
+      {
+        "name": "Screenshot 2026-10-09 at 11.42.07.png",
+        "project": null,
+        "clue": "none",
+        "kb": 310,
+        "topic": ""
+      },
+      {
+        "name": "scan0003.pdf",
+        "project": null,
+        "clue": "none",
+        "kb": 260,
+        "topic": ""
+      },
+      {
+        "name": "Zoom_installer.dmg",
+        "project": null,
+        "clue": "none",
+        "kb": 870,
+        "topic": ""
+      },
+      {
+        "name": "data.csv",
+        "project": null,
+        "clue": "none",
+        "kb": 6,
+        "topic": ""
+      },
+      {
+        "name": "config.json",
+        "project": null,
+        "clue": "none",
+        "kb": 2,
+        "topic": ""
+      },
+      {
+        "name": "script.py",
+        "project": null,
+        "clue": "none",
+        "kb": 3,
+        "topic": ""
+      },
+      {
+        "name": "invoice_8823.pdf",
+        "project": null,
+        "clue": "none",
+        "kb": 90,
+        "topic": ""
+      },
+      {
+        "name": "document (3).docx",
+        "project": null,
+        "clue": "none",
+        "kb": 55,
+        "topic": ""
+      }
+    ]
+  },
+  "persona": "a laid-off software contractor updating a portfolio, filing unemployment claims, and setting up a homebrewing corner in the garage"
+}

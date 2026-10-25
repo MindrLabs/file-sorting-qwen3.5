@@ -1,0 +1,342 @@
+{
+  "number": 15,
+  "language": "ko",
+  "attempts": 1,
+  "models": [
+    "claude-opus-5-5"
+  ],
+  "redraw_kinds": {},
+  "design": {
+    "projects": [
+      {
+        "name": "코크-교구기록-주문",
+        "clue": "스키베린 성 패트릭 성당 1848~1860년 세례 기록 사본 신청서를 코크 교구 사무소에 보냈고, 수수료 25유로는 송금 완료했음."
+      },
+      {
+        "name": "사촌-재회-모임",
+        "clue": "내년 6월 사촌 재회 모임 장소는 킨세일 근처 펜션으로 잠정 확정, 참석 여부 회신은 3월 말까지 받기로 함."
+      },
+      {
+        "name": "가계도-정리",
+        "clue": "오설리번 증조할아버지 형제 중 1871년생 데니스의 배우자 이름이 두 자료에서 다르게 나와서 가계도에 보류 표시해 둠."
+      },
+      {
+        "name": "이민-승선명부",
+        "clue": "1883년 퀸스타운 출항 승선명부에 '맥카시, 조안나, 22세, 하녀'로 적힌 사람이 우리 고조할머니일 가능성이 있음."
+      },
+      {
+        "name": "dna-매칭-분석",
+        "clue": "DNA 매칭에서 공유 cM 412인 보스턴 거주자는 맥카시 쪽 2~3촌으로 추정, 보낸 메시지 답장 기다리는 중."
+      }
+    ],
+    "existing": [
+      {
+        "project": "코크-교구기록-주문",
+        "file": "교구사무소_연락처.txt",
+        "kb": 2
+      },
+      {
+        "project": "가계도-정리",
+        "file": "가계도_초안_v1.pdf",
+        "kb": 400
+      }
+    ],
+    "files": [
+      {
+        "name": "코크교구_세례기록_신청서_2026-09.pdf",
+        "project": "코크-교구기록-주문",
+        "clue": "name",
+        "kb": 180,
+        "topic": ""
+      },
+      {
+        "name": "교구기록_주문확인_영수증.png",
+        "project": "코크-교구기록-주문",
+        "clue": "name",
+        "kb": 240,
+        "topic": ""
+      },
+      {
+        "name": "교구기록_추적표.xlsx",
+        "project": "코크-교구기록-주문",
+        "clue": "name",
+        "kb": 38,
+        "topic": ""
+      },
+      {
+        "name": "사촌모임_참석자명단_v3.xlsx",
+        "project": "사촌-재회-모임",
+        "clue": "name",
+        "kb": 45,
+        "topic": ""
+      },
+      {
+        "name": "재회모임_초대장_최종 (2).docx",
+        "project": "사촌-재회-모임",
+        "clue": "name",
+        "kb": 320,
+        "topic": ""
+      },
+      {
+        "name": "사촌모임_예산.csv",
+        "project": "사촌-재회-모임",
+        "clue": "name",
+        "kb": 3,
+        "topic": "사촌-재회-모임"
+      },
+      {
+        "name": "킨세일_펜션_재회모임_예약확인.pdf",
+        "project": "사촌-재회-모임",
+        "clue": "name",
+        "kb": 150,
+        "topic": ""
+      },
+      {
+        "name": "가계도_오설리번가_2026-10.pdf",
+        "project": "가계도-정리",
+        "clue": "name",
+        "kb": 610,
+        "topic": ""
+      },
+      {
+        "name": "가계도_수정메모.md",
+        "project": "가계도-정리",
+        "clue": "name",
+        "kb": 5,
+        "topic": "가계도-정리"
+      },
+      {
+        "name": "승선명부_퀸스타운_1883_스캔.jpg",
+        "project": "이민-승선명부",
+        "clue": "name",
+        "kb": 850,
+        "topic": ""
+      },
+      {
+        "name": "이민자_승선기록_검색결과.csv",
+        "project": "이민-승선명부",
+        "clue": "name",
+        "kb": 12,
+        "topic": "이민-승선명부"
+      },
+      {
+        "name": "DNA매칭_목록_export_20261015.csv",
+        "project": "dna-매칭-분석",
+        "clue": "name",
+        "kb": 28,
+        "topic": "dna-매칭-분석"
+      },
+      {
+        "name": "dna_공유cM_계산.py",
+        "project": "dna-매칭-분석",
+        "clue": "name",
+        "kb": 4,
+        "topic": "dna-매칭-분석"
+      },
+      {
+        "name": "메모_1003.txt",
+        "project": "코크-교구기록-주문",
+        "clue": "early",
+        "kb": 2,
+        "topic": "코크-교구기록-주문"
+      },
+      {
+        "name": "스캔목록.csv",
+        "project": "코크-교구기록-주문",
+        "clue": "early",
+        "kb": 3,
+        "topic": "코크-교구기록-주문"
+      },
+      {
+        "name": "답장초안.txt",
+        "project": "사촌-재회-모임",
+        "clue": "early",
+        "kb": 3,
+        "topic": "사촌-재회-모임"
+      },
+      {
+        "name": "todo_가을.md",
+        "project": "사촌-재회-모임",
+        "clue": "early",
+        "kb": 2,
+        "topic": "사촌-재회-모임"
+      },
+      {
+        "name": "notes.md",
+        "project": "가계도-정리",
+        "clue": "early",
+        "kb": 6,
+        "topic": "가계도-정리"
+      },
+      {
+        "name": "받은메일_복사.txt",
+        "project": "이민-승선명부",
+        "clue": "early",
+        "kb": 4,
+        "topic": "이민-승선명부"
+      },
+      {
+        "name": "정리할것.txt",
+        "project": "dna-매칭-분석",
+        "clue": "early",
+        "kb": 2,
+        "topic": "dna-매칭-분석"
+      },
+      {
+        "name": "메모 (1).txt",
+        "project": "이민-승선명부",
+        "clue": "mid",
+        "kb": 7,
+        "topic": "이민-승선명부"
+      },
+      {
+        "name": "회의록_1012.md",
+        "project": "사촌-재회-모임",
+        "clue": "mid",
+        "kb": 9,
+        "topic": "사촌-재회-모임"
+      },
+      {
+        "name": "자료모음.md",
+        "project": "가계도-정리",
+        "clue": "mid",
+        "kb": 14,
+        "topic": "가계도-정리"
+      },
+      {
+        "name": "전화메모.txt",
+        "project": "코크-교구기록-주문",
+        "clue": "mid",
+        "kb": 3,
+        "topic": "코크-교구기록-주문"
+      },
+      {
+        "name": "untitled.txt",
+        "project": "dna-매칭-분석",
+        "clue": "mid",
+        "kb": 5,
+        "topic": "dna-매칭-분석"
+      },
+      {
+        "name": "data.json",
+        "project": "가계도-정리",
+        "clue": "mid",
+        "kb": 11,
+        "topic": "가계도-정리"
+      },
+      {
+        "name": "오래된메모.txt",
+        "project": null,
+        "clue": "deep",
+        "kb": 22,
+        "topic": "이민-승선명부"
+      },
+      {
+        "name": "일기_2026.md",
+        "project": null,
+        "clue": "deep",
+        "kb": 35,
+        "topic": "가계도-정리"
+      },
+      {
+        "name": "붙여넣기.txt",
+        "project": null,
+        "clue": "deep",
+        "kb": 18,
+        "topic": "dna-매칭-분석"
+      },
+      {
+        "name": "번역본.txt",
+        "project": null,
+        "clue": "deep",
+        "kb": 9,
+        "topic": "코크-교구기록-주문"
+      },
+      {
+        "name": "여행기록.md",
+        "project": null,
+        "clue": "deep",
+        "kb": 16,
+        "topic": "사촌-재회-모임"
+      },
+      {
+        "name": "export.json",
+        "project": null,
+        "clue": "deep",
+        "kb": 26,
+        "topic": "이민-승선명부"
+      },
+      {
+        "name": "IMG_4521.HEIC",
+        "project": null,
+        "clue": "none",
+        "kb": 780,
+        "topic": ""
+      },
+      {
+        "name": "KakaoTalk_Photo_2026-09-28-14-22-03.jpg",
+        "project": null,
+        "clue": "none",
+        "kb": 410,
+        "topic": ""
+      },
+      {
+        "name": "Scan_0007.pdf",
+        "project": null,
+        "clue": "none",
+        "kb": 520,
+        "topic": ""
+      },
+      {
+        "name": "영수증_스캔.png",
+        "project": null,
+        "clue": "none",
+        "kb": 130,
+        "topic": ""
+      },
+      {
+        "name": "Zoom_installer.dmg",
+        "project": null,
+        "clue": "none",
+        "kb": 880,
+        "topic": ""
+      },
+      {
+        "name": "문서1.docx",
+        "project": null,
+        "clue": "none",
+        "kb": 26,
+        "topic": ""
+      },
+      {
+        "name": "장보기.txt",
+        "project": null,
+        "clue": "none",
+        "kb": 1,
+        "topic": ""
+      },
+      {
+        "name": "사진백업_2026-08.zip",
+        "project": null,
+        "clue": "none",
+        "kb": 900,
+        "topic": ""
+      },
+      {
+        "name": "무제.csv",
+        "project": null,
+        "clue": "none",
+        "kb": 2,
+        "topic": ""
+      },
+      {
+        "name": "레시피_소다브레드.md",
+        "project": null,
+        "clue": "none",
+        "kb": 3,
+        "topic": ""
+      }
+    ]
+  },
+  "persona": "an amateur genealogist tracing family roots in County Cork, ordering parish records, and planning a cousins' reunion"
+}

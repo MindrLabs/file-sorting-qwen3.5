@@ -1,0 +1,338 @@
+{
+  "number": 25,
+  "language": "en",
+  "attempts": 1,
+  "models": [
+    "claude-opus-5-5"
+  ],
+  "redraw_kinds": {},
+  "design": {
+    "projects": [
+      {
+        "name": "home-exercise-handouts",
+        "clue": "Revised the home exercise sheet for knee OA patients: 3 sets of 10 quad sets and straight leg raises, with the new illustrations attached."
+      },
+      {
+        "name": "kpta-poster-2026",
+        "clue": "Poster abstract for the KPTA autumn congress is due Nov 7; board size is A0 portrait, 841 x 1189 mm, so keep the balance figure readable."
+      },
+      {
+        "name": "manual-therapy-course",
+        "clue": "Maitland Level 2 mobilisation course in Seoul runs weekends Nov 14-29; finish the pre-reading on lumbar PA grades I-IV before day one."
+      },
+      {
+        "name": "tka-protocol-update",
+        "clue": "Draft update of the post-TKA rehab protocol for ward 7: start CPM at 0-40 degrees on POD1 and progress 10 degrees daily as tolerated."
+      }
+    ],
+    "existing": [
+      {
+        "project": "kpta-poster-2026",
+        "file": "KPTA_2026_call_for_abstracts.pdf",
+        "kb": 310
+      },
+      {
+        "project": "home-exercise-handouts",
+        "file": "handout_template_hospital_logo.docx",
+        "kb": 85
+      }
+    ],
+    "files": [
+      {
+        "name": "knee_OA_home_exercise_v3.docx",
+        "project": "home-exercise-handouts",
+        "clue": "name",
+        "kb": 140,
+        "topic": ""
+      },
+      {
+        "name": "shoulder_pendulum_handout_KOR_ENG.pdf",
+        "project": "home-exercise-handouts",
+        "clue": "name",
+        "kb": 420,
+        "topic": ""
+      },
+      {
+        "name": "home_exercise_sheet_lowback_final (2).pdf",
+        "project": "home-exercise-handouts",
+        "clue": "name",
+        "kb": 380,
+        "topic": ""
+      },
+      {
+        "name": "home_ex_tracking_list.csv",
+        "project": "home-exercise-handouts",
+        "clue": "name",
+        "kb": 6,
+        "topic": "home-exercise-handouts"
+      },
+      {
+        "name": "KPTA_2026_poster_draft_v4.pdf",
+        "project": "kpta-poster-2026",
+        "clue": "name",
+        "kb": 860,
+        "topic": ""
+      },
+      {
+        "name": "kpta_abstract_submission_1021.docx",
+        "project": "kpta-poster-2026",
+        "clue": "name",
+        "kb": 48,
+        "topic": ""
+      },
+      {
+        "name": "poster_figure_balance_scores.png",
+        "project": "kpta-poster-2026",
+        "clue": "name",
+        "kb": 290,
+        "topic": ""
+      },
+      {
+        "name": "kpta_poster_references.txt",
+        "project": "kpta-poster-2026",
+        "clue": "name",
+        "kb": 4,
+        "topic": "kpta-poster-2026"
+      },
+      {
+        "name": "Maitland_L2_prereading_lumbar.pdf",
+        "project": "manual-therapy-course",
+        "clue": "name",
+        "kb": 740,
+        "topic": ""
+      },
+      {
+        "name": "manual_therapy_course_receipt_2026.pdf",
+        "project": "manual-therapy-course",
+        "clue": "name",
+        "kb": 64,
+        "topic": ""
+      },
+      {
+        "name": "mobilisation_course_notes.md",
+        "project": "manual-therapy-course",
+        "clue": "name",
+        "kb": 12,
+        "topic": "manual-therapy-course"
+      },
+      {
+        "name": "TKA_protocol_ward7_draft_v2.docx",
+        "project": "tka-protocol-update",
+        "clue": "name",
+        "kb": 96,
+        "topic": ""
+      },
+      {
+        "name": "tka_rom_progression_table.xlsx",
+        "project": "tka-protocol-update",
+        "clue": "name",
+        "kb": 38,
+        "topic": ""
+      },
+      {
+        "name": "notes_1015.txt",
+        "project": "home-exercise-handouts",
+        "clue": "early",
+        "kb": 3,
+        "topic": "home-exercise-handouts"
+      },
+      {
+        "name": "draft.md",
+        "project": "kpta-poster-2026",
+        "clue": "early",
+        "kb": 9,
+        "topic": "kpta-poster-2026"
+      },
+      {
+        "name": "todo_weekend.txt",
+        "project": "manual-therapy-course",
+        "clue": "early",
+        "kb": 2,
+        "topic": "manual-therapy-course"
+      },
+      {
+        "name": "meeting_summary.md",
+        "project": "tka-protocol-update",
+        "clue": "early",
+        "kb": 7,
+        "topic": "tka-protocol-update"
+      },
+      {
+        "name": "untitled.txt",
+        "project": "kpta-poster-2026",
+        "clue": "early",
+        "kb": 1,
+        "topic": "kpta-poster-2026"
+      },
+      {
+        "name": "memo (1).txt",
+        "project": "manual-therapy-course",
+        "clue": "early",
+        "kb": 2,
+        "topic": "manual-therapy-course"
+      },
+      {
+        "name": "export_0930.csv",
+        "project": "home-exercise-handouts",
+        "clue": "early",
+        "kb": 14,
+        "topic": "home-exercise-handouts"
+      },
+      {
+        "name": "scratch.md",
+        "project": "tka-protocol-update",
+        "clue": "mid",
+        "kb": 5,
+        "topic": "tka-protocol-update"
+      },
+      {
+        "name": "copied_text.txt",
+        "project": "home-exercise-handouts",
+        "clue": "mid",
+        "kb": 4,
+        "topic": "home-exercise-handouts"
+      },
+      {
+        "name": "Notes 2026-10-08.md",
+        "project": "kpta-poster-2026",
+        "clue": "mid",
+        "kb": 8,
+        "topic": "kpta-poster-2026"
+      },
+      {
+        "name": "email_draft.txt",
+        "project": "manual-therapy-course",
+        "clue": "mid",
+        "kb": 3,
+        "topic": "manual-therapy-course"
+      },
+      {
+        "name": "list.json",
+        "project": "tka-protocol-update",
+        "clue": "mid",
+        "kb": 6,
+        "topic": "tka-protocol-update"
+      },
+      {
+        "name": "analysis.py",
+        "project": "kpta-poster-2026",
+        "clue": "mid",
+        "kb": 11,
+        "topic": "kpta-poster-2026"
+      },
+      {
+        "name": "readme.txt",
+        "project": "home-exercise-handouts",
+        "clue": "mid",
+        "kb": 2,
+        "topic": "home-exercise-handouts"
+      },
+      {
+        "name": "journal_oct.md",
+        "project": null,
+        "clue": "deep",
+        "kb": 26,
+        "topic": "manual-therapy-course"
+      },
+      {
+        "name": "misc_notes.txt",
+        "project": null,
+        "clue": "deep",
+        "kb": 18,
+        "topic": "kpta-poster-2026"
+      },
+      {
+        "name": "data_dump.csv",
+        "project": null,
+        "clue": "deep",
+        "kb": 34,
+        "topic": "tka-protocol-update"
+      },
+      {
+        "name": "chat_export.txt",
+        "project": null,
+        "clue": "deep",
+        "kb": 39,
+        "topic": "home-exercise-handouts"
+      },
+      {
+        "name": "cleanup.py",
+        "project": null,
+        "clue": "deep",
+        "kb": 9,
+        "topic": "kpta-poster-2026"
+      },
+      {
+        "name": "reading_log.md",
+        "project": null,
+        "clue": "deep",
+        "kb": 15,
+        "topic": "tka-protocol-update"
+      },
+      {
+        "name": "IMG_4821.HEIC",
+        "project": null,
+        "clue": "none",
+        "kb": 820,
+        "topic": ""
+      },
+      {
+        "name": "KakaoTalk_Photo_2026-10-12-18-03-11.jpg",
+        "project": null,
+        "clue": "none",
+        "kb": 350,
+        "topic": ""
+      },
+      {
+        "name": "Screenshot 2026-10-19 at 09.14.22.png",
+        "project": null,
+        "clue": "none",
+        "kb": 510,
+        "topic": ""
+      },
+      {
+        "name": "scan0003.pdf",
+        "project": null,
+        "clue": "none",
+        "kb": 640,
+        "topic": ""
+      },
+      {
+        "name": "GoogleChrome.dmg",
+        "project": null,
+        "clue": "none",
+        "kb": 900,
+        "topic": ""
+      },
+      {
+        "name": "health_checkup_results_2026.pdf",
+        "project": null,
+        "clue": "none",
+        "kb": 230,
+        "topic": ""
+      },
+      {
+        "name": "Archive.zip",
+        "project": null,
+        "clue": "none",
+        "kb": 720,
+        "topic": ""
+      },
+      {
+        "name": "groceries.txt",
+        "project": null,
+        "clue": "none",
+        "kb": 1,
+        "topic": ""
+      },
+      {
+        "name": "parking_receipt_oct.jpg",
+        "project": null,
+        "clue": "none",
+        "kb": 180,
+        "topic": ""
+      }
+    ]
+  },
+  "persona": "수원 대학병원 물리치료사: 환자 운동 처방 자료 정리와 학회 포스터 발표, 도수치료 연수를 준비한다"
+}

@@ -1,0 +1,333 @@
+{
+  "number": 4,
+  "language": "en",
+  "attempts": 2,
+  "models": [
+    "claude-opus-5-5"
+  ],
+  "redraw_kinds": {
+    "leak": 2
+  },
+  "design": {
+    "projects": [
+      {
+        "name": "pta-auction-night",
+        "clue": "Reminder: silent auction donations for Brookside Elementary's spring auction night are due to the PTA office by March 6."
+      },
+      {
+        "name": "kids-braces-claims",
+        "clue": "Delta Dental denied the claim for Maya's Invisalign refinement; resubmit with Dr. Patel's narrative and the ledger from Smile Lane Orthodontics."
+      },
+      {
+        "name": "hearthlight-wax-co",
+        "clue": "Hearthlight Wax Co. launch batch: 48 jars of the 8 oz cedar & fig soy candle, CD-12 wicks, cure 10 days before the Etsy listing goes live."
+      },
+      {
+        "name": "cedar-lake-reunion",
+        "clue": "The Okafor family reunion at Cedar Lake cabin is booked for July 18-20; each household brings two side dishes and their own linens."
+      }
+    ],
+    "existing": [
+      {
+        "project": "pta-auction-night",
+        "file": "auction_committee_roster.xlsx",
+        "kb": 30
+      },
+      {
+        "project": "hearthlight-wax-co",
+        "file": "etsy_shop_policies.md",
+        "kb": 3
+      }
+    ],
+    "files": [
+      {
+        "name": "Brookside_auction_donation_form_2026.pdf",
+        "project": "pta-auction-night",
+        "clue": "name",
+        "kb": 140,
+        "topic": ""
+      },
+      {
+        "name": "auction-night-bid-sheets-v3.docx",
+        "project": "pta-auction-night",
+        "clue": "name",
+        "kb": 64,
+        "topic": ""
+      },
+      {
+        "name": "pta_auction_items_tracker.xlsx",
+        "project": "pta-auction-night",
+        "clue": "name",
+        "kb": 48,
+        "topic": ""
+      },
+      {
+        "name": "SmileLane_Ortho_statement_Sep2026.pdf",
+        "project": "kids-braces-claims",
+        "clue": "name",
+        "kb": 210,
+        "topic": ""
+      },
+      {
+        "name": "braces_claim_appeal_draft.txt",
+        "project": "kids-braces-claims",
+        "clue": "name",
+        "kb": 4,
+        "topic": "kids-braces-claims"
+      },
+      {
+        "name": "delta-dental-EOB-scan-0912.pdf",
+        "project": "kids-braces-claims",
+        "clue": "name",
+        "kb": 320,
+        "topic": ""
+      },
+      {
+        "name": "hearthlight_label_mockup_final (2).png",
+        "project": "hearthlight-wax-co",
+        "clue": "name",
+        "kb": 860,
+        "topic": ""
+      },
+      {
+        "name": "hearthlight-wax-co-pricing.csv",
+        "project": "hearthlight-wax-co",
+        "clue": "name",
+        "kb": 3,
+        "topic": "hearthlight-wax-co"
+      },
+      {
+        "name": "soy_wax_supplier_invoice_CandleScience.pdf",
+        "project": "hearthlight-wax-co",
+        "clue": "name",
+        "kb": 95,
+        "topic": ""
+      },
+      {
+        "name": "cedar-lake-reunion-rsvps.csv",
+        "project": "cedar-lake-reunion",
+        "clue": "name",
+        "kb": 2,
+        "topic": "cedar-lake-reunion"
+      },
+      {
+        "name": "CedarLake_cabin_booking_confirmation.pdf",
+        "project": "cedar-lake-reunion",
+        "clue": "name",
+        "kb": 180,
+        "topic": ""
+      },
+      {
+        "name": "reunion_tshirt_order.xlsx",
+        "project": "cedar-lake-reunion",
+        "clue": "name",
+        "kb": 36,
+        "topic": ""
+      },
+      {
+        "name": "notes.txt",
+        "project": "pta-auction-night",
+        "clue": "early",
+        "kb": 2,
+        "topic": "pta-auction-night"
+      },
+      {
+        "name": "draft_email.txt",
+        "project": "kids-braces-claims",
+        "clue": "early",
+        "kb": 3,
+        "topic": "kids-braces-claims"
+      },
+      {
+        "name": "todo-list (1).md",
+        "project": "hearthlight-wax-co",
+        "clue": "mid",
+        "kb": 5,
+        "topic": "hearthlight-wax-co"
+      },
+      {
+        "name": "meeting_notes_oct.md",
+        "project": "pta-auction-night",
+        "clue": "mid",
+        "kb": 6,
+        "topic": "pta-auction-night"
+      },
+      {
+        "name": "Untitled.txt",
+        "project": "cedar-lake-reunion",
+        "clue": "early",
+        "kb": 1,
+        "topic": "cedar-lake-reunion"
+      },
+      {
+        "name": "export_2026-10-14.csv",
+        "project": "kids-braces-claims",
+        "clue": "mid",
+        "kb": 8,
+        "topic": "kids-braces-claims"
+      },
+      {
+        "name": "checklist.md",
+        "project": "hearthlight-wax-co",
+        "clue": "early",
+        "kb": 2,
+        "topic": "hearthlight-wax-co"
+      },
+      {
+        "name": "scratch.txt",
+        "project": "cedar-lake-reunion",
+        "clue": "mid",
+        "kb": 4,
+        "topic": "cedar-lake-reunion"
+      },
+      {
+        "name": "reply.txt",
+        "project": "pta-auction-night",
+        "clue": "early",
+        "kb": 2,
+        "topic": "pta-auction-night"
+      },
+      {
+        "name": "data.json",
+        "project": "hearthlight-wax-co",
+        "clue": "mid",
+        "kb": 12,
+        "topic": "hearthlight-wax-co"
+      },
+      {
+        "name": "copy of notes.md",
+        "project": "kids-braces-claims",
+        "clue": "mid",
+        "kb": 5,
+        "topic": "kids-braces-claims"
+      },
+      {
+        "name": "list_final.txt",
+        "project": "cedar-lake-reunion",
+        "clue": "early",
+        "kb": 2,
+        "topic": "cedar-lake-reunion"
+      },
+      {
+        "name": "sheet1.csv",
+        "project": "pta-auction-night",
+        "clue": "mid",
+        "kb": 7,
+        "topic": "pta-auction-night"
+      },
+      {
+        "name": "budget_v2.csv",
+        "project": "hearthlight-wax-co",
+        "clue": "early",
+        "kb": 6,
+        "topic": "hearthlight-wax-co"
+      },
+      {
+        "name": "journal_2026.md",
+        "project": null,
+        "clue": "deep",
+        "kb": 22,
+        "topic": "kids-braces-claims"
+      },
+      {
+        "name": "inbox_dump.txt",
+        "project": null,
+        "clue": "deep",
+        "kb": 30,
+        "topic": "pta-auction-night"
+      },
+      {
+        "name": "random_ideas.md",
+        "project": null,
+        "clue": "deep",
+        "kb": 14,
+        "topic": "hearthlight-wax-co"
+      },
+      {
+        "name": "household_log.csv",
+        "project": null,
+        "clue": "deep",
+        "kb": 18,
+        "topic": "cedar-lake-reunion"
+      },
+      {
+        "name": "script.py",
+        "project": null,
+        "clue": "deep",
+        "kb": 9,
+        "topic": "hearthlight-wax-co"
+      },
+      {
+        "name": "old_notes_backup.txt",
+        "project": null,
+        "clue": "deep",
+        "kb": 26,
+        "topic": "kids-braces-claims"
+      },
+      {
+        "name": "IMG_3092.heic",
+        "project": null,
+        "clue": "none",
+        "kb": 780,
+        "topic": ""
+      },
+      {
+        "name": "Scan_0042.pdf",
+        "project": null,
+        "clue": "none",
+        "kb": 410,
+        "topic": ""
+      },
+      {
+        "name": "zoomusInstallerFull.dmg",
+        "project": null,
+        "clue": "none",
+        "kb": 880,
+        "topic": ""
+      },
+      {
+        "name": "recipe_lasagna.txt",
+        "project": null,
+        "clue": "none",
+        "kb": 2,
+        "topic": ""
+      },
+      {
+        "name": "photos_from_grandma.zip",
+        "project": null,
+        "clue": "none",
+        "kb": 650,
+        "topic": ""
+      },
+      {
+        "name": "Screenshot 2026-10-03 at 9.41.12 PM.png",
+        "project": null,
+        "clue": "none",
+        "kb": 340,
+        "topic": ""
+      },
+      {
+        "name": "library_books_due.md",
+        "project": null,
+        "clue": "none",
+        "kb": 1,
+        "topic": ""
+      },
+      {
+        "name": "resume_2019_final.docx",
+        "project": null,
+        "clue": "none",
+        "kb": 45,
+        "topic": ""
+      },
+      {
+        "name": "wifi_password.txt",
+        "project": null,
+        "clue": "none",
+        "kb": 1,
+        "topic": ""
+      }
+    ]
+  },
+  "persona": "a stay-at-home parent of three organizing a school fundraiser, tracking orthodontist bills, and launching a small soy candle shop online"
+}

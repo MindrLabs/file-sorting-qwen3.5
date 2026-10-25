@@ -1,0 +1,2 @@
+line,folder,step1_tool,step2_format,step3_by_name,step4_by_content,step5_leaves_alone,step7_stops,approved_as_is,edited_lines,calls_after_done,step6_feedback,rounds_to_fix,wrong_merge_pairs,pair_recall,coverage,pair_precision,pair_f1,wrong_share,usable_10,usable,usable_30,approvals,empty_plans,ari,ami,final_pair_f1,final_coverage,session_wrong_share,gen_sec,peak_mb,first_plan_sha256
+desktop-9b-q4km-model-list-8k,desktop,1,1,,,0,1,0,25,1,,,0,,,0.0,,1.0,0,0,0,1,1,0.0,0.0,,,1.0,349.517,6657.5,a5e5718b115806bbdbb64405c8132c6f6846ddf1040eb71662444372dd31ce55
